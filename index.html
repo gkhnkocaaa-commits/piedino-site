@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>piedino. — dalla testa ai piedi</title>
+<meta name="description" content="Piedino — İtalyan zarafeti, yerli üretim. Çorap ve şapkada yeni bir marka. Çok yakında.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --crema: #F5EFE2;
+    --inchiostro: #2B2118;
+    --terracotta: #C24A22;
+    --notte: #042C53;
+    --oliva: #0F6E56;
+    --filo: #C9BBA4;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    background: var(--crema);
+    color: var(--inchiostro);
+    font-family: "Karla", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 28px 20px;
+    text-align: center;
+    overflow-x: hidden;
+  }
+
+  /* — testa: şapka — */
+  .testa { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .testa svg { width: 74px; height: auto; }
+  .etichetta {
+    font-size: 11px; letter-spacing: 5px; text-transform: uppercase;
+    color: var(--notte); opacity: .55;
+  }
+
+  /* — iplik: dikey bağlantı — */
+  .filo {
+    flex: 0 0 auto;
+    width: 2px; height: clamp(28px, 6vh, 64px);
+    background-image: linear-gradient(var(--filo) 55%, transparent 45%);
+    background-size: 2px 10px;
+  }
+
+  /* — cuore: marka — */
+  .cuore { display: flex; flex-direction: column; align-items: center; }
+  .marchio {
+    font-family: "Fraunces", serif;
+    font-optical-sizing: auto;
+    font-size: clamp(56px, 12vw, 104px);
+    font-weight: 500;
+    letter-spacing: .01em;
+    line-height: 1;
+  }
+  .marchio .punto { color: var(--terracotta); }
+  .motto {
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-size: clamp(16px, 3vw, 21px);
+    color: var(--notte);
+    margin-top: 10px;
+  }
+  .spiega {
+    max-width: 34ch;
+    margin: 22px auto 0;
+    font-size: 15px;
+    line-height: 1.65;
+    color: #5A4F41;
+  }
+  .presto {
+    display: inline-block;
+    margin-top: 26px;
+    font-size: 12px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--terracotta);
+    border: 1px solid var(--terracotta);
+    border-radius: 999px;
+    padding: 8px 22px;
+  }
+
+  form {
+    margin-top: 30px;
+    display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;
+    width: 100%; max-width: 420px;
+  }
+  input[type="email"] {
+    flex: 1 1 220px;
+    font-family: "Karla", sans-serif;
+    font-size: 15px;
+    padding: 13px 16px;
+    border: 1px solid var(--filo);
+    border-radius: 10px;
+    background: #FFFDF8;
+    color: var(--inchiostro);
+  }
+  input[type="email"]:focus { outline: 2px solid var(--notte); outline-offset: 1px; }
+  button {
+    font-family: "Karla", sans-serif;
+    font-size: 15px; font-weight: 600;
+    padding: 13px 22px;
+    border: none; border-radius: 10px;
+    background: var(--notte); color: var(--crema);
+    cursor: pointer;
+  }
+  button:hover { background: var(--terracotta); }
+  button:focus-visible { outline: 2px solid var(--inchiostro); outline-offset: 2px; }
+  .grazie { display: none; margin-top: 26px; color: var(--oliva); font-weight: 600; }
+
+  /* — piedi: çorap — */
+  .piedi { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .piedi svg { width: 58px; height: auto; }
+  footer { margin-top: 10px; font-size: 12px; color: #8A7D6B; letter-spacing: .5px; }
+  footer a { color: var(--notte); text-decoration: none; border-bottom: 1px solid var(--filo); }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .testa, .cuore, .filo, .piedi, footer { animation: entra .9s ease both; }
+    .cuore { animation-delay: .15s; }
+    .filo.giu, .piedi, footer { animation-delay: .3s; }
+    @keyframes entra { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  }
+</style>
+</head>
+<body>
+
+  <div class="testa" aria-hidden="true">
+    <svg viewBox="0 0 100 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 8 C33 8 26 22 25 40 L75 40 C74 22 67 8 50 8 Z" fill="#042C53"/>
+      <path d="M12 44 C34 38 66 38 88 44 C89 47 88 50 86 50 C64 45 36 45 14 50 C12 50 11 47 12 44 Z" fill="#042C53"/>
+      <rect x="25" y="33" width="50" height="6" rx="3" fill="#C24A22"/>
+    </svg>
+    <span class="etichetta">testa</span>
+  </div>
+
+  <div class="filo" aria-hidden="true"></div>
+
+  <main class="cuore">
+    <h1 class="marchio">piedino<span class="punto">.</span></h1>
+    <p class="motto">dalla testa ai piedi</p>
+    <p class="spiega">İtalyanca "baştan ayağa" demek. Çorapta ve şapkada, iyi giyinmenin iki ucunu buluşturuyoruz. Yerli üretim, zarif tasarım.</p>
+    <span class="presto">Çok yakında</span>
+
+    <form name="haberdar-ol" method="POST" data-netlify="true" id="notifyForm">
+      <input type="hidden" name="form-name" value="haberdar-ol">
+      <label for="email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">E-posta adresiniz</label>
+      <input type="email" id="email" name="email" placeholder="E-posta adresiniz" required>
+      <button type="submit">Haberdar et</button>
+    </form>
+    <p class="grazie" id="grazie">Teşekkürler! Açılışta ilk siz duyacaksınız.</p>
+  </main>
+
+  <div class="filo giu" aria-hidden="true"></div>
+
+  <div class="piedi" aria-hidden="true">
+    <svg viewBox="0 0 80 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M26 6 L58 6 L58 52 C58 52 74 62 72 76 C70 89 56 94 44 90 C30 85 26 72 26 60 Z" fill="#C24A22"/>
+      <rect x="26" y="6" width="32" height="10" rx="3" fill="#042C53"/>
+      <path d="M35 70 C40 66 50 66 56 71" stroke="#F5EFE2" stroke-width="3" stroke-linecap="round"/>
+      <path d="M33 79 C39 75 50 75 57 80" stroke="#F5EFE2" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+    <span class="etichetta">piedi</span>
+  </div>
+
+  <footer>
+    © 2026 piedino · <a href="mailto:merhaba@piedino.example">iletişim</a>
+  </footer>
+
+<script>
+  // Netlify form gönderimi sonrası sayfa yenilenmeden teşekkür mesajı göster
+  const form = document.getElementById("notifyForm");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(data).toString(),
+      });
+      form.style.display = "none";
+      document.getElementById("grazie").style.display = "block";
+    } catch (err) {
+      form.style.display = "none";
+      document.getElementById("grazie").textContent = "Bir sorun oldu, lütfen tekrar deneyin.";
+      document.getElementById("grazie").style.display = "block";
+    }
+  });
+</script>
+</body>
+</html>
