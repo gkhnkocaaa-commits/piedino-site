@@ -192,24 +192,18 @@
       padding:28px 0;
     }
     .category-card{
-      min-height:620px;
+      aspect-ratio:708/327;
       border-radius:var(--radius);
       overflow:hidden;
       position:relative;
       box-shadow:var(--shadow);
       isolation:isolate;
+      display:block;
     }
     .category-card img{
       transition:transform .7s ease;
     }
     .category-card:hover img{transform:scale(1.035)}
-    .category-card::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(180deg,transparent 40%,rgba(19,18,17,.68) 100%);
-      z-index:1;
-    }
     .category-copy{
       position:absolute;
       inset:auto 0 0 0;
@@ -284,7 +278,7 @@
       gap:12px;
     }
     .social-grid a{
-      aspect-ratio:1/1;
+      aspect-ratio:3/4;
       border-radius:18px;
       overflow:hidden;
       background:#e8e0d6;
@@ -346,7 +340,7 @@
       .menu-toggle{display:grid}
       .nav{grid-template-columns:1fr auto}
       .actions .desktop-only{display:none}
-      .category-card{min-height:500px}
+      
       .benefits{grid-template-columns:1fr 1fr}
       .benefit:nth-child(2){border-right:none}
       .benefit:nth-child(-n+2){border-bottom:1px solid var(--line)}
@@ -373,9 +367,9 @@
       h1{font-size:52px}
       .hero-copy p{font-size:17px}
       .category-grid{grid-template-columns:1fr}
-      .category-card{min-height:72vh}
-      .category-copy{padding:28px}
-      .category-copy h2{font-size:54px}
+      
+      
+      
       .benefits{grid-template-columns:1fr}
       .benefit{border-right:none;border-bottom:1px solid var(--line)!important}
       .benefit:last-child{border-bottom:none!important}
@@ -435,23 +429,13 @@
     </section>
 
     <section class="container category-grid" aria-label="Ana kategoriler">
-      <article class="category-card" id="corap">
-        <img src="assets/images/yesil-patik-corap.jpg" alt="Piedino çorap koleksiyonu">
-        <div class="category-copy">
-          <h2>Çorap</h2>
-          <p>Her adımda konfor, her stilde uyum.</p>
-          <a class="text-link" href="corap.html">Koleksiyonu keşfet →</a>
-        </div>
-      </article>
+      <a class="category-card" id="corap" href="corap.html" aria-label="Çorap koleksiyonunu keşfet">
+        <img src="assets/images/banner-corap.jpg" alt="Çorap — Her adımda konfor, her stilde uyum">
+      </a>
 
-      <article class="category-card" id="sapka">
-        <img src="assets/images/keten-sapka.jpg" alt="Piedino şapka koleksiyonu">
-        <div class="category-copy">
-          <h2>Şapka</h2>
-          <p>Tarzını tamamlayan en önemli detay.</p>
-          <a class="text-link" href="sapka.html">Koleksiyonu keşfet →</a>
-        </div>
-      </article>
+      <a class="category-card" id="sapka" href="sapka.html" aria-label="Şapka koleksiyonunu keşfet">
+        <img src="assets/images/banner-sapka.jpg" alt="Şapka — Tarzını tamamlayan en önemli detay">
+      </a>
     </section>
 
     <section class="container benefits" aria-label="Alışveriş avantajları">
