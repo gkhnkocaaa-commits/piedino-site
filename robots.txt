@@ -1,0 +1,27 @@
+# piedino.com.tr — robots.txt
+# Arama motoru botlarına yol tarifi
+
+User-agent: *
+Allow: /
+
+# --- E-ticaret sayfaları (indekslenmemeli) ---
+# Bu satırlar şimdilik boşta durur, ilgili sayfalar açıldığında
+# otomatik olarak korumaya girer. Silmeye gerek yok.
+Disallow: /sepet
+Disallow: /sepet/
+Disallow: /odeme
+Disallow: /odeme/
+Disallow: /checkout
+Disallow: /cart
+Disallow: /hesabim
+Disallow: /hesabim/
+Disallow: /account
+Disallow: /siparis-takip
+Disallow: /arama
+Disallow: /search
+Disallow: /*?filtre=
+Disallow: /*?sirala=
+Disallow: /*?sort=
+
+# --- Site haritası ---
+Sitemap: https://piedino.com.tr/sitemap.xml
