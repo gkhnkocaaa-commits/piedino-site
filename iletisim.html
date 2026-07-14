@@ -452,12 +452,8 @@
         <h2>Bize yazın</h2>
         <p>Formu doldurun, mesajınız doğrudan bize ulaşsın.</p>
 
-        <form class="form-grid" id="contactForm" action="https://formsubmit.co/info@piedino.com.tr" method="POST">
-          <!-- FormSubmit ayarları -->
+        <form class="form-grid" id="contactForm" action="https://formspree.io/f/mojgvjeb" method="POST">
           <input type="hidden" name="_subject" value="Piedino İletişim Formu — Yeni Mesaj">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://piedino.com.tr/iletisim.html?gonderildi=1">
 
           <div class="form-row">
             <div class="field">
@@ -619,20 +615,46 @@
     });
 
     /*
-      İletişim formu FormSubmit servisine bağlıdır:
-      Form gönderildiğinde mesaj info@piedino.com.tr adresine e-posta olarak düşer.
-      İLK KULLANIM: İlk form gönderiminden sonra info@piedino.com.tr adresine
-      FormSubmit'ten bir aktivasyon maili gelir — içindeki "Activate" linkine
-      bir kez tıklamanız yeterli. Sonraki tüm mesajlar otomatik ulaşır.
+      İletişim formu Formspree'ye bağlıdır (https://formspree.io/f/mojgvjeb).
+      Mesajlar info@piedino.com.tr adresine e-posta olarak düşer ve
+      Formspree panelinde de listelenir. Gönderim AJAX ile yapılır:
+      ziyaretçi siteden ayrılmadan teşekkür mesajını görür.
     */
-    // Gönderim sonrası (?gonderildi=1 ile dönüldüğünde) teşekkür mesajını göster
-    if (new URLSearchParams(window.location.search).get("gonderildi") === "1") {
+    document.getElementById("contactForm")?.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      const button = form.querySelector('button[type="submit"]');
       const success = document.getElementById("formSuccess");
-      if (success) {
+
+      button.disabled = true;
+      button.textContent = "Gönderiliyor…";
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { "Accept": "application/json" }
+        });
+
+        if (response.ok) {
+          form.reset();
+          success.style.display = "block";
+          success.textContent = "Teşekkürler, mesajınız bize ulaştı! En kısa sürede dönüş yapacağız.";
+          success.scrollIntoView({ behavior: "smooth", block: "center" });
+          button.textContent = "Gönderildi ✓";
+        } else {
+          throw new Error("Sunucu hatası");
+        }
+      } catch (error) {
         success.style.display = "block";
-        success.scrollIntoView({ behavior: "smooth", block: "center" });
+        success.style.background = "#f7e8e4";
+        success.style.borderColor = "#e3c2b8";
+        success.style.color = "#8a4a38";
+        success.textContent = "Mesaj gönderilemedi. Lütfen tekrar deneyin ya da doğrudan info@piedino.com.tr adresine yazın.";
+        button.disabled = false;
+        button.textContent = "Mesajı Gönder →";
       }
-    }
+    });
 
     document.getElementById("newsletterForm")?.addEventListener("submit", (event) => {
       event.preventDefault();
