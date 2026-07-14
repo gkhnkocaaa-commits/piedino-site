@@ -3,8 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Piedino — çorap ve şapkada sade, kaliteli ve zamansız tasarımlar." />
-  <title>Piedino — Çorap & Şapka</title>
+  <title>Piedino | Çorap ve Şapka — Bambu, Pamuk ve Tasarım Çoraplar</title>
+  <meta name="description" content="Piedino; bambu, pamuk ve merserize çoraplar ile keten, hasır ve safari şapkalar sunar. Dalla testa ai piedi — baştan ayağa konfor ve zarafet. Türkiye üretimi." />
+  <meta name="keywords" content="çorap, şapka, bambu çorap, patik çorap, tasarım çorap, keten şapka, hasır şapka, kadın çorap, erkek çorap, piedino" />
+  <link rel="canonical" href="https://piedino.com.tr/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="Piedino" />
+  <meta name="theme-color" content="#C24A22" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,18 +20,72 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://piedino.com.tr">
-<meta property="og:title" content="Piedino — Çorap & Şapka">
-<meta property="og:description" content="Dalla testa ai piedi — baştan ayağa. Renkli adımlar, mutlu sen.">
+<meta property="og:site_name" content="Piedino">
+<meta property="og:url" content="https://piedino.com.tr/">
+<meta property="og:title" content="Piedino | Çorap ve Şapka — Baştan Ayağa">
+<meta property="og:description" content="Bambu, pamuk ve merserize çoraplar; keten, hasır ve safari şapkalar. Dalla testa ai piedi — baştan ayağa konfor ve zarafet.">
 <meta property="og:image" content="https://piedino.com.tr/piedino-og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Piedino — dalla testa ai piedi">
 <meta property="og:locale" content="tr_TR">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Piedino — Çorap & Şapka">
-<meta name="twitter:description" content="Dalla testa ai piedi — baştan ayağa.">
+<meta name="twitter:title" content="Piedino | Çorap ve Şapka — Baştan Ayağa">
+<meta name="twitter:description" content="Bambu, pamuk ve merserize çoraplar; keten, hasır ve safari şapkalar.">
 <meta name="twitter:image" content="https://piedino.com.tr/piedino-og.png">
+
+<!-- Yapılandırılmış veri: Google'a markayı ve siteyi tanıtır -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://piedino.com.tr/#organization",
+      "name": "Piedino",
+      "alternateName": "Piedino Çorap & Şapka",
+      "url": "https://piedino.com.tr/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://piedino.com.tr/icon-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://piedino.com.tr/piedino-og.png",
+      "description": "Piedino; bambu, pamuk ve merserize çoraplar ile keten, hasır ve safari şapkalar sunan Türkiye merkezli bir marka. Dalla testa ai piedi — baştan ayağa.",
+      "slogan": "Dalla testa ai piedi — baştan ayağa",
+      "email": "info@piedino.com.tr",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "İstanbul",
+        "addressCountry": "TR"
+      },
+      "sameAs": [
+        "https://instagram.com/piedino.tr"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://piedino.com.tr/#website",
+      "url": "https://piedino.com.tr/",
+      "name": "Piedino",
+      "description": "Çorap ve şapkada sade, kaliteli ve zamansız tasarımlar.",
+      "publisher": { "@id": "https://piedino.com.tr/#organization" },
+      "inLanguage": "tr-TR"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://piedino.com.tr/#webpage",
+      "url": "https://piedino.com.tr/",
+      "name": "Piedino | Çorap ve Şapka",
+      "isPartOf": { "@id": "https://piedino.com.tr/#website" },
+      "about": { "@id": "https://piedino.com.tr/#organization" },
+      "inLanguage": "tr-TR"
+    }
+  ]
+}
+</script>
   <style>
     :root{
       --bg:#f4eee8;
@@ -395,6 +454,13 @@
       .footer-grid{grid-template-columns:1fr 1fr}
       .footer-brand,.footer-news{grid-column:1/-1}
     }
+    .story{padding:10px 0 6px}
+    .story-inner{max-width:760px;margin-inline:auto;text-align:center}
+    .story-inner h2{font-family:"Fraunces",serif;font-size:clamp(26px,3.4vw,38px);font-weight:500;margin-bottom:18px}
+    .story-inner p{color:var(--muted);line-height:1.75;margin-bottom:14px}
+    .story-inner strong{color:var(--text);font-weight:600}
+    .story-inner em{font-style:italic}
+
   </style>
 </head>
 
@@ -409,14 +475,14 @@
 
   <header class="header">
     <div class="container nav">
-      <a class="brand" href="#">
+      <a class="brand" href="/" aria-label="Piedino ana sayfa">
         <span class="brand-mark">P</span>
         <span>PIEDINO<span class="brand-dot">.</span></span>
       </a>
 
       <nav class="menu" aria-label="Ana menü">
-        <a href="#corap">ÇORAP</a>
-        <a href="#sapka">ŞAPKA</a>
+        <a href="corap.html">ÇORAP</a>
+        <a href="sapka.html">ŞAPKA</a>
         <a href="#hakkimizda">HAKKIMIZDA</a>
         <a href="#iletisim">İLETİŞİM</a>
       </nav>
@@ -438,8 +504,8 @@
           <h1>Renkli Adımlar,<br>Mutlu Sen.</h1>
           <p>Günlük yaşamın konforunu, sade tasarım ve kaliteli malzemelerle buluşturuyoruz.</p>
           <div class="hero-buttons">
-            <a class="btn btn-dark" href="#corap">Çorapları Keşfet →</a>
-            <a class="btn btn-light" href="#sapka">Şapkaları İncele →</a>
+            <a class="btn btn-dark" href="corap.html">Çorapları Keşfet →</a>
+            <a class="btn btn-light" href="sapka.html">Şapkaları İncele →</a>
           </div>
         </div>
       </div>
@@ -447,11 +513,11 @@
 
     <section class="container category-grid" aria-label="Ana kategoriler">
       <a class="category-card" id="corap" href="corap.html" aria-label="Çorap koleksiyonunu keşfet">
-        <img src="assets/images/banner-corap.jpg" alt="Çorap — Her adımda konfor, her stilde uyum">
+        <img src="assets/images/banner-corap.jpg" alt="Piedino bambu ve pamuklu çorap koleksiyonu" width="800" height="600">
       </a>
 
       <a class="category-card" id="sapka" href="sapka.html" aria-label="Şapka koleksiyonunu keşfet">
-        <img src="assets/images/banner-sapka.jpg" alt="Şapka — Tarzını tamamlayan en önemli detay">
+        <img src="assets/images/banner-sapka.jpg" alt="Piedino keten, hasır ve safari şapka koleksiyonu" width="800" height="600">
       </a>
     </section>
 
@@ -471,6 +537,16 @@
       <div class="benefit">
         <div class="benefit-icon">🔒</div>
         <div><strong>Güvenli Ödeme</strong><span>Ödemeleriniz güvenle korunur.</span></div>
+      </div>
+    </section>
+
+    <section class="container story" id="hikaye" aria-label="Marka hikayemiz">
+      <div class="story-inner">
+        <h2>Dalla testa ai piedi — Baştan Ayağa</h2>
+        <p><strong>Piedino</strong>, İtalyanca "küçük ayak" demek. Sloganımız <em>dalla testa ai piedi</em> ise "baştan ayağa" anlamına geliyor — ve markanın tüm fikri bu iki kelimede saklı: iyi giyinmek baştan başlar, ayakta biter.</p>
+        <p>Çoraplarımızı <strong>bambu, pamuk ve merserize</strong> ipliklerden üretiyoruz. Bambu çorap, antibakteriyel yapısı ve nefes alabilirliğiyle hassas ciltler için; merserize pamuk, ipeksi dokusu ve renk haslığıyla klasik giyim için ideal. Patik çoraptan soket çoraba, termal modelden desenli tasarımlara kadar her adıma uygun bir Piedino var.</p>
+        <p>Şapka koleksiyonumuzda ise <strong>keten şapka, hasır şapka ve safari şapka</strong> modelleri yer alıyor — yaz güneşinde gölge, her mevsimde stil.</p>
+        <p>Ürünlerimiz Türkiye'de, uzun yıllardır çorap üreten atölyelerde dokunuyor. Aracıyı azaltıp kaliteyi yükseltmek; sade, zamansız ve dürüst bir marka kurmak istiyoruz.</p>
       </div>
     </section>
 
@@ -498,7 +574,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand" id="hakkimizda">
-          <a class="brand" href="#">
+          <a class="brand" href="/" aria-label="Piedino ana sayfa">
             <span class="brand-mark">P</span>
             <span>PIEDINO<span class="brand-dot">.</span></span>
           </a>
