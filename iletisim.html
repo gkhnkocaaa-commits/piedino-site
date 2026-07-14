@@ -450,9 +450,15 @@
       <!-- Form -->
       <div class="contact-card">
         <h2>Bize yazın</h2>
-        <p>Formu doldurun, mesajınız e-posta uygulamanız üzerinden bize iletilsin.</p>
+        <p>Formu doldurun, mesajınız doğrudan bize ulaşsın.</p>
 
-        <form class="form-grid" id="contactForm">
+        <form class="form-grid" id="contactForm" action="https://formsubmit.co/info@piedino.com.tr" method="POST">
+          <!-- FormSubmit ayarları -->
+          <input type="hidden" name="_subject" value="Piedino İletişim Formu — Yeni Mesaj">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://piedino.com.tr/iletisim.html?gonderildi=1">
+
           <div class="form-row">
             <div class="field">
               <label for="cf-name">Adınız Soyadınız</label>
@@ -481,7 +487,7 @@
             <textarea id="cf-message" name="message" placeholder="Sipariş numaranız varsa eklemeniz süreci hızlandırır." required></textarea>
           </div>
 
-          <div class="form-success" id="formSuccess">Teşekkürler! E-posta uygulamanız açılıyor — mesajı göndermeyi unutmayın.</div>
+          <div class="form-success" id="formSuccess">Teşekkürler, mesajınız bize ulaştı! En kısa sürede dönüş yapacağız.</div>
 
           <button class="btn btn-dark" type="submit">Mesajı Gönder →</button>
           <p class="form-note">Bilgileriniz yalnızca size dönüş yapmak için kullanılır, üçüncü kişilerle paylaşılmaz.</p>
@@ -613,32 +619,20 @@
     });
 
     /*
-      İletişim formu: Sunucu (backend) olmadığı için mesaj, ziyaretçinin
-      kendi e-posta uygulaması üzerinden info@piedino.com.tr adresine gönderilir.
-      İleride Formspree / FormSubmit gibi bir servise ya da kendi backend'inize
-      geçmek isterseniz sadece bu bölümü değiştirmeniz yeterli.
+      İletişim formu FormSubmit servisine bağlıdır:
+      Form gönderildiğinde mesaj info@piedino.com.tr adresine e-posta olarak düşer.
+      İLK KULLANIM: İlk form gönderiminden sonra info@piedino.com.tr adresine
+      FormSubmit'ten bir aktivasyon maili gelir — içindeki "Activate" linkine
+      bir kez tıklamanız yeterli. Sonraki tüm mesajlar otomatik ulaşır.
     */
-    document.getElementById("contactForm")?.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const form = event.currentTarget;
-      const name = form.name.value.trim();
-      const email = form.email.value.trim();
-      const subject = form.subject.value;
-      const message = form.message.value.trim();
-
-      const body =
-        "Ad Soyad: " + name + "\n" +
-        "E-posta: " + email + "\n\n" +
-        message;
-
-      const mailto =
-        "mailto:info@piedino.com.tr" +
-        "?subject=" + encodeURIComponent("[Piedino İletişim] " + subject) +
-        "&body=" + encodeURIComponent(body);
-
-      document.getElementById("formSuccess").style.display = "block";
-      window.location.href = mailto;
-    });
+    // Gönderim sonrası (?gonderildi=1 ile dönüldüğünde) teşekkür mesajını göster
+    if (new URLSearchParams(window.location.search).get("gonderildi") === "1") {
+      const success = document.getElementById("formSuccess");
+      if (success) {
+        success.style.display = "block";
+        success.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }
 
     document.getElementById("newsletterForm")?.addEventListener("submit", (event) => {
       event.preventDefault();
