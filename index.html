@@ -411,6 +411,29 @@
       text-align:center;
     }
 
+    .footer-social{
+      display:flex;
+      gap:10px;
+      margin-top:16px;
+    }
+    .footer-social a{
+      width:40px;
+      height:40px;
+      border:1px solid var(--line);
+      background:var(--surface);
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      color:var(--text);
+      transition:.25s;
+    }
+    .footer-social a:hover{
+      background:var(--olive-dark);
+      border-color:var(--olive-dark);
+      color:white;
+      transform:translateY(-2px);
+    }
+
     @media (max-width:1000px){
       .menu{display:none}
       .menu-toggle{display:grid}
@@ -580,6 +603,15 @@
           </a>
           <p style="margin-top:16px;max-width:280px">Renkli adımların, mutlu bir yaşama giden yol olduğuna inanıyoruz.</p>
           <p style="margin-top:10px"><a href="mailto:info@piedino.com.tr">info@piedino.com.tr</a></p>
+          <div class="footer-social">
+            <a href="https://instagram.com/piedino.tr" target="_blank" rel="noopener" aria-label="Piedino Instagram sayfası">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+          </div>
         </div>
 
         <div>
