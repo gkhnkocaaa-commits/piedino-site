@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hakkımızda | Piedino — 1980'den Bu Yana İplik</title>
+  <meta name="description" content="Piedino'nun hikâyesi: 1980'lerden bu yana süren tekstil geleneği, bambu iplik tercihi ve 'dalla testa ai piedi' — baştan ayağa iyi giyinme fikri." />
+  <link rel="canonical" href="https://piedino.com.tr/hakkimizda.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://piedino.com.tr/hakkimizda.html">
+  <meta property="og:title" content="Hakkımızda | Piedino">
+  <meta property="og:description" content="1980'lerden bu yana süren bir tekstil geleneği ve baştan ayağa iyi giyinme fikri.">
+  <meta property="og:image" content="https://piedino.com.tr/piedino-og.png">
+  <meta property="og:locale" content="tr_TR">
+
+  <style>
+    :root{
+      --bg:#f4eee8; --surface:#fffaf5; --text:#2f2824; --muted:#7a6c63;
+      --olive:#8a6f5a; --olive-dark:#6f5544; --line:#dfd1c5; --sand:#cdb7a5;
+      --terra:#C24A22; --notte:#042C53;
+      --shadow:0 18px 40px rgba(45,39,31,.08); --radius:24px; --max:1440px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:"Karla",sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+    img{display:block;width:100%;height:100%;object-fit:cover}
+    a{text-decoration:none;color:inherit}
+    button{font:inherit}
+    .container{width:min(calc(100% - 40px),var(--max));margin-inline:auto}
+
+    /* ÜST BANT */
+    .topbar{background:var(--sand);color:#43382f;font-size:13px}
+    .topbar-inner{display:flex;justify-content:space-between;gap:18px;padding:9px 0;flex-wrap:wrap}
+    @media(max-width:760px){.topbar-inner span:nth-child(3){display:none}}
+
+    /* HEADER */
+    .header{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 0}
+    .brand{display:flex;align-items:center;gap:12px;font-family:"Fraunces",serif;font-size:20px;letter-spacing:3px}
+    .brand-mark{width:34px;height:34px;border:1px solid var(--line);border-radius:50%;
+      display:grid;place-items:center;font-size:15px;letter-spacing:0}
+    .brand-dot{color:var(--terra)}
+    .menu{display:flex;gap:30px;font-size:13px;letter-spacing:2px;font-weight:600}
+    .menu a{color:var(--muted);transition:.2s}
+    .menu a:hover,.menu a.active{color:var(--text)}
+    .actions{display:flex;gap:8px}
+    .icon-btn{width:38px;height:38px;border:1px solid var(--line);background:transparent;
+      border-radius:50%;cursor:pointer;display:grid;place-items:center;color:var(--muted)}
+    .menu-toggle{display:none}
+    @media(max-width:900px){
+      .menu{display:none}
+      .menu-toggle{display:grid}
+      .desktop-only{display:none}
+    }
+
+    /* HERO */
+    .hero{padding:88px 0 64px;text-align:center}
+    .eyebrow{font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--olive);margin-bottom:20px}
+    .hero h1{font-family:"Fraunces",serif;font-weight:400;
+      font-size:clamp(34px,5.4vw,60px);line-height:1.1;letter-spacing:.005em}
+    .hero .lede{max-width:56ch;margin:26px auto 0;color:var(--muted);font-size:clamp(16px,1.7vw,19px)}
+    .hero .motto{font-family:"Fraunces",serif;font-style:italic;color:var(--notte);
+      font-size:clamp(17px,2vw,21px);margin-top:18px}
+
+    /* İPLİK AYIRICI */
+    .filo{width:2px;height:56px;margin:8px auto 0;
+      background-image:linear-gradient(var(--sand) 55%,transparent 45%);background-size:2px 10px}
+
+    /* HİKÂYE */
+    .story{padding:24px 0 20px}
+    .story-inner{max-width:720px;margin-inline:auto}
+    .block{margin-bottom:56px}
+    .block h2{font-family:"Fraunces",serif;font-weight:500;
+      font-size:clamp(24px,3vw,32px);margin-bottom:16px;line-height:1.25}
+    .block p{color:var(--muted);font-size:17px;margin-bottom:15px}
+    .block p:last-child{margin-bottom:0}
+    .block strong{color:var(--text);font-weight:600}
+    .block em{font-style:italic;color:var(--notte)}
+
+    .pull{
+      border-left:3px solid var(--terra);padding:6px 0 6px 22px;margin:34px 0;
+      font-family:"Fraunces",serif;font-size:clamp(19px,2.4vw,24px);
+      line-height:1.45;color:var(--text);font-weight:400;
+    }
+
+    /* DEĞERLER */
+    .values{background:var(--surface);border-block:1px solid var(--line);padding:64px 0;margin-top:20px}
+    .values-head{text-align:center;margin-bottom:40px}
+    .values-head h2{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(26px,3.4vw,36px)}
+    .values-head p{color:var(--muted);margin-top:10px}
+    .vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;
+      max-width:1000px;margin-inline:auto}
+    .v{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:26px 24px}
+    .v .num{font-family:"Fraunces",serif;font-size:30px;color:var(--terra);line-height:1;margin-bottom:12px}
+    .v h3{font-family:"Fraunces",serif;font-weight:500;font-size:20px;margin-bottom:8px}
+    .v p{color:var(--muted);font-size:15px}
+
+    /* KAPANIŞ */
+    .close{padding:76px 0 84px;text-align:center}
+    .close h2{font-family:"Fraunces",serif;font-weight:400;font-size:clamp(26px,3.6vw,38px);line-height:1.25}
+    .close p{color:var(--muted);max-width:52ch;margin:18px auto 30px;font-size:17px}
+    .btn{display:inline-block;padding:14px 26px;border-radius:999px;font-weight:700;font-size:14px;transition:.2s}
+    .btn-dark{background:var(--olive-dark);color:#fff}
+    .btn-dark:hover{background:var(--text)}
+    .btn-light{background:var(--surface);color:var(--text);border:1px solid var(--line);margin-left:8px}
+    .btn-light:hover{border-color:var(--olive)}
+
+    /* FOOTER */
+    .footer{background:var(--surface);border-top:1px solid var(--line);padding:56px 0 30px}
+    .footer-grid{display:grid;grid-template-columns:1.5fr repeat(3,1fr) 1.4fr;gap:32px}
+    @media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:560px){.footer-grid{grid-template-columns:1fr}}
+    .footer h4{font-family:"Fraunces",serif;font-weight:500;font-size:16px;margin-bottom:14px}
+    .footer-links{display:flex;flex-direction:column;gap:9px;font-size:14px;color:var(--muted)}
+    .footer-links a:hover{color:var(--text)}
+    .footer-brand p{color:var(--muted);font-size:14px}
+    .newsletter{display:flex;gap:8px;margin-top:12px}
+    .newsletter input{flex:1;padding:11px 14px;border:1px solid var(--line);border-radius:10px;
+      background:var(--bg);font:inherit;color:var(--text)}
+    .newsletter button{padding:11px 16px;border:none;border-radius:10px;
+      background:var(--olive-dark);color:#fff;cursor:pointer}
+    .copyright{margin-top:36px;padding-top:20px;border-top:1px solid var(--line);
+      text-align:center;color:var(--muted);font-size:13px}
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>1000₺ ve üzeri siparişlerde ücretsiz kargo</span>
+      <span>İlk siparişe özel %10 indirim · KOD: PIEDINO10</span>
+      <span>Hızlı teslimat, kolay iade</span>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="Piedino ana sayfa">
+        <span class="brand-mark">P</span>
+        <span>PIEDINO<span class="brand-dot">.</span></span>
+      </a>
+      <nav class="menu" aria-label="Ana menü">
+        <a href="corap.html">ÇORAP</a>
+        <a href="sapka.html">ŞAPKA</a>
+        <a href="hakkimizda.html" class="active">HAKKIMIZDA</a>
+        <a href="iletisim.html">İLETİŞİM</a>
+      </nav>
+      <div class="actions">
+        <button class="icon-btn desktop-only" aria-label="Ara">⌕</button>
+        <button class="icon-btn desktop-only" aria-label="Favoriler">♡</button>
+        <button class="icon-btn desktop-only" aria-label="Sepet">🛍</button>
+        <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Menüyü aç">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero container">
+      <div class="eyebrow">Hakkımızda</div>
+      <h1>Küçük bir ayak,<br>uzun bir hikâye.</h1>
+      <p class="motto">dalla testa ai piedi</p>
+      <p class="lede">Piedino, İtalyanca "küçük ayak" demek. Sloganımız ise "baştan ayağa" — çünkü iyi giyinmek baştan başlar, ayakta biter.</p>
+      <div class="filo" aria-hidden="true"></div>
+    </section>
+
+    <section class="story container">
+      <div class="story-inner">
+
+        <div class="block">
+          <h2>Hikâyemiz bir markadan değil, bir tezgâhtan başlıyor</h2>
+          <p>Ailemiz <strong>1980'lerden bu yana</strong> tekstilin içinde. İpliği elle tutup kalitesini anlamayı, örgü ayarını tutturmayı, iyi çorabı kötüsünden ayırmayı bir dükkânda değil; makinenin başında öğrendik.</p>
+          <p>Yıllarca başkalarının markaları için üretildi. Etiketler değişti, ipliğin kendisi değişmedi. Sonunda kendi adımızı koymaya karar verdik.</p>
+        </div>
+
+        <div class="pull">
+          Çorap, küçümsenen bir üründür. Kimse üzerine düşünmez — ta ki kötü bir tanesini giyene kadar.
+        </div>
+
+        <div class="block">
+          <h2>Neden çorap?</h2>
+          <p>Sabah aceleyle giyilir, akşam çıkarılıp bir kenara atılır. Ama lastiği düşen, dikişi parmağa batan, üç yıkamada rengi solan bir çorap koca bir günü gölgeleyebilir.</p>
+          <p>Biz o küçük ayrıntının peşindeyiz. Kimsenin dikkat etmediği yerde iyi olmak, gerçekten iyi olmaktır.</p>
+        </div>
+
+        <div class="block">
+          <h2>Neden bambu?</h2>
+          <p>Bambu iplik nefes alır, koku yapmaz, hassas cilde iyi gelir. Yazın serin, kışın kuru tutar. Pamuktan daha yumuşak, sentetikten daha dürüst.</p>
+          <p>Merserize pamuğun da, penyenin de, yünün de bir yeri var — her ipliğin bir işi var. Ama işe bambudan başladık, çünkü farkı en çok orada hissediyorsunuz.</p>
+        </div>
+
+        <div class="block">
+          <h2>Söz verdiğimiz şey</h2>
+          <p><strong>Ucuz olmayacağız.</strong> Ama aldığınız çorabın beşinci yıkamadan sonra da ilk günkü gibi durmasını istiyoruz.</p>
+          <p>Az model, iyi iplik, dürüst fiyat. Vitrini kalabalıklaştırmak yerine, giydiğinizde <em>"aa, bu gerçekten iyiymiş"</em> dedirtmek istiyoruz. Kolay yol değil; ama tek doğru yol bu.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="values">
+      <div class="container">
+        <div class="values-head">
+          <h2>Nasıl çalışıyoruz</h2>
+          <p>Üç basit kural, hiç değişmeyen.</p>
+        </div>
+        <div class="vgrid">
+          <div class="v">
+            <div class="num">01</div>
+            <h3>Az model, derin stok</h3>
+            <p>Kırk çeşit çıkarıp hiçbirini bulundurmaktansa, on model yapıp hepsini elde tutmayı seçiyoruz. Beğendiğiniz çorabı bir daha bulabilmelisiniz.</p>
+          </div>
+          <div class="v">
+            <div class="num">02</div>
+            <h3>İplik önce gelir</h3>
+            <p>Desen sonradan eklenir, iplik eklenmez. Maliyeti kısmamız gerekirse tasarımdan kısarız; malzemeden asla.</p>
+          </div>
+          <div class="v">
+            <div class="num">03</div>
+            <h3>Aradaki mesafeyi kısaltıyoruz</h3>
+            <p>Üretim bize yabancı değil — arada kaç el varsa, kalite o kadar düşer, fiyat o kadar artar. İkisini de kısaltmaya çalışıyoruz.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="close container">
+      <h2>Adımız ayaktan geliyor,<br>ama işimiz baştan başlıyor.</h2>
+      <p>Çoraptan sonra sırada şapka var. O gün geldiğinde <em>dalla testa ai piedi</em> sözünü tam anlamıyla tutmuş olacağız.</p>
+      <a class="btn btn-dark" href="corap.html">Çorapları Keşfet →</a>
+      <a class="btn btn-light" href="iletisim.html">Bize Yazın</a>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="/" aria-label="Piedino ana sayfa">
+            <span class="brand-mark">P</span>
+            <span>PIEDINO<span class="brand-dot">.</span></span>
+          </a>
+          <p style="margin-top:16px;max-width:280px">Renkli adımların, mutlu bir yaşama giden yol olduğuna inanıyoruz.</p>
+          <p style="margin-top:10px"><a href="mailto:info@piedino.com.tr">info@piedino.com.tr</a></p>
+        </div>
+
+        <div>
+          <h4>Kurumsal</h4>
+          <div class="footer-links">
+            <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="iletisim.html">İletişim</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Yardım</h4>
+          <div class="footer-links">
+            <a href="iletisim.html">Bize Ulaşın</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Kategoriler</h4>
+          <div class="footer-links">
+            <a href="corap.html">Çorap</a>
+            <a href="sapka.html">Şapka</a>
+          </div>
+        </div>
+
+        <div class="footer-news">
+          <h4>E-Bülten</h4>
+          <p style="color:var(--muted);font-size:14px">Yeni ürünler ve kampanyalardan haberdar olun.</p>
+          <form class="newsletter" name="bulten" method="POST" data-netlify="true" id="newsletterForm">
+            <input type="hidden" name="form-name" value="bulten">
+            <input type="email" name="email" placeholder="E-posta adresiniz" aria-label="E-posta adresiniz" required>
+            <button type="submit" aria-label="Kaydol">→</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="copyright">© 2026 PIEDINO. Tüm hakları saklıdır. · <a href="mailto:info@piedino.com.tr">info@piedino.com.tr</a></div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const menu = document.querySelector(".menu");
+    menuToggle?.addEventListener("click", () => {
+      const isOpen = menu.style.display === "flex";
+      menu.style.display = isOpen ? "none" : "flex";
+      if (!isOpen) {
+        Object.assign(menu.style, {
+          position:"absolute", top:"70px", left:"12px", right:"12px",
+          flexDirection:"column", background:"#fffaf5", padding:"22px",
+          border:"1px solid #dfd1c5", borderRadius:"18px",
+          boxShadow:"0 18px 40px rgba(45,39,31,.12)"
+        });
+      }
+    });
+  </script>
+</body>
+</html>
