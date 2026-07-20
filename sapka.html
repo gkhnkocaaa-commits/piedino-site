@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Şapka Koleksiyonu — Çok Yakında | Piedino</title>
+<meta name="description" content="Piedino keten, hasır ve safari şapka koleksiyonu çok yakında.">
+<link rel="canonical" href="https://piedino.com.tr/sapka.html">
+<meta name="robots" content="noindex, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Karla:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0}
+
+  .pdsoon{
+    position:relative;
+    overflow:hidden;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:110px 24px;
+    background:
+      radial-gradient(1200px 520px at 78% 12%, rgba(194,74,34,.10), transparent 62%),
+      radial-gradient(900px 460px at 12% 88%, rgba(31,42,68,.09), transparent 60%),
+      #FBF7F1;
+  }
+
+  .pdsoon::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:repeating-linear-gradient(
+      45deg,
+      rgba(31,42,68,.028) 0 1px,
+      transparent 1px 11px
+    );
+    pointer-events:none;
+  }
+
+  .pdsoon__ghost{
+    position:absolute;
+    top:50%; left:50%;
+    transform:translate(-50%,-50%);
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:600;
+    font-size:clamp(20rem,46vw,42rem);
+    line-height:1;
+    color:rgba(194,74,34,.045);
+    user-select:none;
+    pointer-events:none;
+    z-index:0;
+  }
+
+  .pdsoon__inner{
+    position:relative;
+    z-index:2;
+    max-width:660px;
+    text-align:center;
+  }
+
+  .pdsoon__badge{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    font-family:'Karla',system-ui,sans-serif;
+    font-size:11.5px;
+    font-weight:700;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:#C24A22;
+    background:rgba(194,74,34,.075);
+    border:1px solid rgba(194,74,34,.22);
+    border-radius:100px;
+    padding:8px 18px;
+    margin-bottom:38px;
+    animation:pdFade .8s ease both;
+  }
+  .pdsoon__dot{
+    width:6px;height:6px;border-radius:50%;
+    background:#C24A22;
+    animation:pdPulse 1.9s ease-in-out infinite;
+  }
+  @keyframes pdPulse{
+    0%,100%{opacity:1;transform:scale(1)}
+    50%{opacity:.35;transform:scale(.7)}
+  }
+
+  .pdsoon__knit{
+    width:132px;height:52px;
+    margin:0 auto 40px;
+    display:block;
+    animation:pdFade .8s ease .1s both;
+  }
+  .pdsoon__knit path{
+    fill:none;
+    stroke:#C24A22;
+    stroke-width:2.6;
+    stroke-linecap:round;
+    stroke-dasharray:260;
+    stroke-dashoffset:260;
+    animation:pdDraw 3.2s ease-in-out infinite;
+  }
+  .pdsoon__knit path:nth-child(2){
+    stroke:#1F2A44;
+    opacity:.32;
+    animation-delay:.45s;
+  }
+  @keyframes pdDraw{
+    0%{stroke-dashoffset:260}
+    45%{stroke-dashoffset:0}
+    75%{stroke-dashoffset:0;opacity:1}
+    100%{stroke-dashoffset:-260;opacity:.15}
+  }
+
+  .pdsoon__title{
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:600;
+    font-size:clamp(2.3rem,6vw,4rem);
+    line-height:1.12;
+    letter-spacing:-.015em;
+    color:#1F2A44;
+    margin:0 0 26px;
+    animation:pdRise .9s cubic-bezier(.22,1,.36,1) .18s both;
+  }
+  .pdsoon__title em{
+    font-style:italic;
+    color:#C24A22;
+    position:relative;
+    white-space:nowrap;
+  }
+  .pdsoon__title em::after{
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:.06em;
+    height:3px;
+    background:rgba(194,74,34,.24);
+    border-radius:3px;
+    transform:scaleX(0);
+    transform-origin:left;
+    animation:pdSweep 1s cubic-bezier(.22,1,.36,1) 1s both;
+  }
+  @keyframes pdSweep{to{transform:scaleX(1)}}
+
+  .pdsoon__text{
+    font-family:'Karla',system-ui,sans-serif;
+    font-size:clamp(1rem,2.1vw,1.14rem);
+    line-height:1.8;
+    color:#5F5A52;
+    max-width:500px;
+    margin:0 auto 46px;
+    animation:pdRise .9s cubic-bezier(.22,1,.36,1) .3s both;
+  }
+
+  .pdsoon__tags{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:48px;
+    animation:pdRise .9s cubic-bezier(.22,1,.36,1) .42s both;
+  }
+  .pdsoon__tag{
+    font-family:'Karla',system-ui,sans-serif;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:#7A736A;
+    background:#fff;
+    border:1px solid rgba(31,42,68,.10);
+    border-radius:100px;
+    padding:9px 20px;
+    transition:color .3s ease,border-color .3s ease,transform .3s ease;
+  }
+  .pdsoon__tag:hover{
+    color:#C24A22;
+    border-color:rgba(194,74,34,.4);
+    transform:translateY(-2px);
+  }
+
+  .pdsoon__actions{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:14px;
+    animation:pdRise .9s cubic-bezier(.22,1,.36,1) .54s both;
+  }
+  .pdsoon__btn{
+    font-family:'Karla',system-ui,sans-serif;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:15px 32px;
+    border-radius:3px;
+    transition:all .3s cubic-bezier(.22,1,.36,1);
+    display:inline-block;
+  }
+  .pdsoon__btn--solid{
+    color:#fff;
+    background:#C24A22;
+    box-shadow:0 6px 20px rgba(194,74,34,.24);
+  }
+  .pdsoon__btn--solid:hover{
+    background:#1F2A44;
+    box-shadow:0 10px 28px rgba(31,42,68,.26);
+    transform:translateY(-3px);
+  }
+  .pdsoon__btn--ghost{
+    color:#1F2A44;
+    background:transparent;
+    border:1.5px solid rgba(31,42,68,.2);
+  }
+  .pdsoon__btn--ghost:hover{
+    border-color:#1F2A44;
+    background:rgba(31,42,68,.045);
+    transform:translateY(-3px);
+  }
+
+  .pdsoon__note{
+    margin-top:54px;
+    font-family:'Fraunces',Georgia,serif;
+    font-style:italic;
+    font-size:14.5px;
+    color:#A79C8E;
+    animation:pdFade 1s ease .8s both;
+  }
+
+  @keyframes pdFade{from{opacity:0}to{opacity:1}}
+  @keyframes pdRise{
+    from{opacity:0;transform:translateY(22px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+
+  @media (max-width:600px){
+    .pdsoon{padding:76px 20px}
+    .pdsoon__title{font-size:2.1rem}
+    .pdsoon__title em{white-space:normal}
+    .pdsoon__actions{flex-direction:column;width:100%}
+    .pdsoon__btn{width:100%;text-align:center}
+    .pdsoon__note{margin-top:40px}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .pdsoon *{animation:none!important;transform:none!important}
+    .pdsoon__title em::after{transform:scaleX(1)}
+    .pdsoon__knit path{stroke-dashoffset:0}
+  }
+</style>
+</head>
+<body>
+
+<section class="pdsoon">
+  <span class="pdsoon__ghost" aria-hidden="true">P</span>
+
+  <div class="pdsoon__inner">
+
+    <span class="pdsoon__badge">
+      <span class="pdsoon__dot"></span>
+      Piedino 2026 Koleksiyonu
+    </span>
+
+    <svg class="pdsoon__knit" viewBox="0 0 132 52" aria-hidden="true">
+      <path d="M30 40c0-18 12-30 36-30s36 12 36 30"/>
+      <path d="M8 40c8-6 30-9 58-9s50 3 58 9"/>
+    </svg>
+
+    <h1 class="pdsoon__title">
+      Şapka koleksiyonumuz<br>
+      <em>sizler için hazırlanıyor</em>
+    </h1>
+
+    <p class="pdsoon__text">
+      Her dokusunu özenle seçtik. Keten, hasır ve safari modellerimizi
+      en doğru şekilde sunabilmek için
+      son hazırlıklarımızı yapıyoruz.
+    </p>
+
+    <div class="pdsoon__tags">
+      <span class="pdsoon__tag">Keten</span>
+      <span class="pdsoon__tag">Hasır</span>
+      <span class="pdsoon__tag">Safari</span>
+      <span class="pdsoon__tag">Türkiye Üretimi</span>
+    </div>
+
+    <div class="pdsoon__actions">
+      <a class="pdsoon__btn pdsoon__btn--solid"
+         href="https://instagram.com/piedino.tr"
+         target="_blank" rel="noopener">Instagram'da Takip Et</a>
+      <a class="pdsoon__btn pdsoon__btn--ghost"
+         href="https://piedino.com.tr/">Ana Sayfaya Dön</a>
+    </div>
+
+    <p class="pdsoon__note">dalla testa ai piedi — baştan ayağa</p>
+
+  </div>
+</section>
+
+</body>
+</html>
