@@ -401,6 +401,23 @@
       background:var(--olive-dark);
       color:white;
       cursor:pointer;
+      transition:background .25s ease;
+    }
+    .newsletter button:hover{background:var(--terracotta,#C24A22)}
+    .newsletter button:disabled{opacity:.6;cursor:default}
+    .news-msg{
+      margin-top:12px;
+      font-size:13px!important;
+      line-height:1.5;
+      display:none;
+    }
+    .news-msg.ok{color:#4e5942;display:block}
+    .news-msg.err{color:#C24A22;display:block}
+    .news-kvkk{
+      margin-top:10px;
+      font-size:11.5px!important;
+      line-height:1.6;
+      opacity:.8;
     }
     .copyright{
       margin-top:38px;
@@ -644,10 +661,18 @@
         <div class="footer-news">
           <h4>E-Bülten</h4>
           <p>Yeni ürünler ve kampanyalardan haberdar olun.</p>
-          <form class="newsletter" id="newsletterForm">
-            <input type="email" placeholder="E-posta adresiniz" aria-label="E-posta adresiniz" required>
+          <form class="newsletter" id="newsletterForm"
+                method="POST" target="brevoFrame"
+                action="https://59d41fac.sibforms.com/serve/MUIFAELk2gJuRQnszHJ_J4aSbdJ6DbdMoJZqn9gzJS8D_lDVAOGAgmZMEn1pm8nX1OPhjykTeZRa0cE5KSJYg5z9L50JwUyN4pzvFjgydJ-CnsHVRrnMwvdWdv9Wch-8MI0SukQ9uPJ_Qu7B4lu4FiD4CGDMHwgEJSVHmtr-fnBK1l-aT67xi10AXfFBsrDltVzz9NcaaMBY66w7Aw==">
+            <input type="email" name="EMAIL" placeholder="E-posta adresiniz" aria-label="E-posta adresiniz" autocomplete="email" required>
+            <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0">
+            <input type="hidden" name="locale" value="tr">
+            <input type="hidden" name="html_type" value="simple">
             <button type="submit" aria-label="Kaydol">→</button>
           </form>
+          <p class="news-msg" id="newsMsg"></p>
+          <p class="news-kvkk">Kaydolarak e-posta almayı kabul etmiş olursunuz.</p>
+          <iframe name="brevoFrame" title="gizli" tabindex="-1" style="position:absolute;left:-9999px;width:0;height:0;border:0"></iframe>
         </div>
       </div>
 
@@ -676,11 +701,25 @@
       }
     });
 
-    document.getElementById("newsletterForm")?.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const form = event.currentTarget;
-      form.innerHTML = '<div style="padding:14px 18px;color:#4e5942;font-weight:700">Teşekkürler, kaydınız alındı.</div>';
-    });
+    (function () {
+      const form = document.getElementById("newsletterForm");
+      const msg = document.getElementById("newsMsg");
+      if (!form) return;
+      const input = form.querySelector('input[name="EMAIL"]');
+      const btn = form.querySelector('button[type="submit"]');
+
+      form.addEventListener("submit", () => {
+        btn.disabled = true;
+        btn.textContent = "…";
+        setTimeout(() => {
+          msg.textContent = "Kaydınız alındı. Onay için e-postanızı kontrol edin.";
+          msg.className = "news-msg ok";
+          input.value = "";
+          btn.disabled = false;
+          btn.textContent = "→";
+        }, 1400);
+      });
+    })();
   </script>
 </body>
 </html>
