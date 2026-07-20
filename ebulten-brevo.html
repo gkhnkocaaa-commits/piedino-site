@@ -1,0 +1,124 @@
+<!-- ============================================
+     PIEDINO — Footer E-Bülten (Brevo bağlantılı)
+     Mevcut e-bülten <form> bloğunun YERİNE koyun.
+     Tüm sayfalarda (index, corap, sapka, hakkimizda, iletisim) aynı.
+     ============================================ -->
+
+<style>
+  .pdnl__form{
+    display:flex;
+    align-items:center;
+    background:#fff;
+    border-radius:100px;
+    overflow:hidden;
+    max-width:300px;
+    border:1px solid rgba(31,42,68,.10);
+  }
+  .pdnl__input{
+    flex:1;
+    border:0;
+    outline:0;
+    background:transparent;
+    padding:14px 20px;
+    font-family:'Karla',system-ui,sans-serif;
+    font-size:14px;
+    color:#1F2A44;
+    min-width:0;
+  }
+  .pdnl__input::placeholder{color:#A79C8E}
+  .pdnl__btn{
+    border:0;
+    cursor:pointer;
+    background:#6B4A35;
+    color:#fff;
+    font-size:18px;
+    line-height:1;
+    padding:14px 22px;
+    border-radius:100px;
+    transition:background .25s ease;
+  }
+  .pdnl__btn:hover{background:#C24A22}
+  .pdnl__btn:disabled{opacity:.6;cursor:default}
+
+  .pdnl__msg{
+    margin:12px 0 0;
+    font-family:'Karla',system-ui,sans-serif;
+    font-size:13px;
+    line-height:1.5;
+    display:none;
+  }
+  .pdnl__msg--ok{color:#4A7C59}
+  .pdnl__msg--err{color:#C24A22}
+
+  .pdnl__kvkk{
+    margin:12px 0 0;
+    font-family:'Karla',system-ui,sans-serif;
+    font-size:11.5px;
+    line-height:1.6;
+    color:#A79C8E;
+    max-width:300px;
+  }
+  .pdnl__kvkk a{color:#8A7C6E;text-decoration:underline}
+
+  .pdnl__hidden{
+    position:absolute!important;
+    left:-9999px!important;
+    opacity:0!important;
+    height:0!important;
+    width:0!important;
+  }
+</style>
+
+<form class="pdnl__form"
+      id="pdnlForm"
+      method="POST"
+      target="pdnlFrame"
+      action="https://59d41fac.sibforms.com/serve/MUIFAELk2gJuRQnszHJ_J4aSbdJ6DbdMoJZqn9gzJS8D_lDVAOGAgmZMEn1pm8nX1OPhjykTeZRa0cE5KSJYg5z9L50JwUyN4pzvFjgydJ-CnsHVRrnMwvdWdv9Wch-8MI0SukQ9uPJ_Qu7B4lu4FiD4CGDMHwgEJSVHmtr-fnBK1l-aT67xi10AXfFBsrDltVzz9NcaaMBY66w7Aw==">
+
+  <label for="EMAIL" class="pdnl__hidden">E-posta adresiniz</label>
+  <input class="pdnl__input"
+         type="email"
+         id="EMAIL"
+         name="EMAIL"
+         placeholder="E-posta adresiniz"
+         autocomplete="email"
+         required>
+
+  <input type="text" name="email_address_check" value="" class="pdnl__hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <input type="hidden" name="locale" value="tr">
+  <input type="hidden" name="html_type" value="simple">
+
+  <button class="pdnl__btn" type="submit" id="pdnlBtn" aria-label="Bültene kaydol">&rarr;</button>
+</form>
+
+<p class="pdnl__msg" id="pdnlMsg"></p>
+
+<p class="pdnl__kvkk">
+  Kaydolarak <a href="/gizlilik.html">KVKK aydınlatma metnini</a> okuduğunuzu
+  ve e-posta almayı kabul ettiğinizi onaylarsınız.
+</p>
+
+<iframe name="pdnlFrame" class="pdnl__hidden" title="gizli" tabindex="-1"></iframe>
+
+<script>
+(function(){
+  var f=document.getElementById('pdnlForm');
+  var m=document.getElementById('pdnlMsg');
+  var b=document.getElementById('pdnlBtn');
+  var i=document.getElementById('EMAIL');
+  if(!f) return;
+
+  f.addEventListener('submit',function(){
+    b.disabled=true;
+    b.innerHTML='&hellip;';
+    setTimeout(function(){
+      m.textContent='Kaydınız alındı. Onay için e-postanızı kontrol edin.';
+      m.className='pdnl__msg pdnl__msg--ok';
+      m.style.display='block';
+      i.value='';
+      b.disabled=false;
+      b.innerHTML='&rarr;';
+    },1200);
+  });
+})();
+</script>
