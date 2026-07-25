@@ -95,10 +95,11 @@
     display:flex;align-items:center;justify-content:center;
     overflow:hidden;
   }
-  .pd-col__media::after{
-    content:"";position:absolute;inset:0;
-    background-image:repeating-linear-gradient(45deg, rgba(31,42,68,.03) 0 1px, transparent 1px 12px);
+  .pd-col__media img{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;display:block;z-index:1;
   }
+  .pd-col__media--photo::after{display:none}
   /* koleksiyona göre zemin rengi */
   .pd-col--classico .pd-col__media{
     background:radial-gradient(360px 220px at 60% 30%, rgba(31,42,68,.14), transparent 62%),
@@ -241,12 +242,11 @@
 
     <!-- CLASSICO -->
     <article class="pd-col pd-col--classico">
-      <div class="pd-col__media">
-        <svg class="pd-sock" viewBox="0 0 82 120" aria-hidden="true">
-          <path d="M28 8h26v46c0 6 3 10 9 15l10 9c6 6 8 13 5 20-3 8-11 12-19 9l-30-13c-8-3-13-11-13-20V8z"/>
-          <path d="M28 20h26"/>
-        </svg>
-        <span class="pd-col__ph">Görsel yakında</span>
+      <div class="pd-col__media pd-col__media--photo">
+        <picture>
+          <source srcset="images/corap-classico.webp" type="image/webp">
+          <img src="images/corap-classico.jpg" alt="Piedino Classico koleksiyonu — lacivert ve krem düz renk pamuk çoraplar" loading="lazy">
+        </picture>
       </div>
       <div class="pd-col__body">
         <p class="pd-col__kicker">Classico</p>
@@ -269,12 +269,11 @@
 
     <!-- VIVO -->
     <article class="pd-col pd-col--vivo pd-col--flip">
-      <div class="pd-col__media">
-        <svg class="pd-sock" viewBox="0 0 82 120" aria-hidden="true">
-          <path d="M28 8h26v46c0 6 3 10 9 15l10 9c6 6 8 13 5 20-3 8-11 12-19 9l-30-13c-8-3-13-11-13-20V8z"/>
-          <path d="M28 34h26M28 48h30M30 62h30"/>
-        </svg>
-        <span class="pd-col__ph">Görsel yakında</span>
+      <div class="pd-col__media pd-col__media--photo">
+        <picture>
+          <source srcset="images/corap-vivo.webp" type="image/webp">
+          <img src="images/corap-vivo.jpg" alt="Piedino Vivo koleksiyonu — terracotta, yeşil ve krem desenli çoraplar" loading="lazy">
+        </picture>
       </div>
       <div class="pd-col__body">
         <p class="pd-col__kicker">Vivo</p>
@@ -297,12 +296,11 @@
 
     <!-- REGALO -->
     <article class="pd-col pd-col--regalo">
-      <div class="pd-col__media">
-        <svg class="pd-sock" viewBox="0 0 82 120" aria-hidden="true">
-          <path d="M28 8h26v46c0 6 3 10 9 15l10 9c6 6 8 13 5 20-3 8-11 12-19 9l-30-13c-8-3-13-11-13-20V8z"/>
-          <path d="M20 4h42M25 4v6M41 4v6M57 4v6"/>
-        </svg>
-        <span class="pd-col__ph">Görsel yakında</span>
+      <div class="pd-col__media pd-col__media--photo">
+        <picture>
+          <source srcset="images/corap-regalo.webp" type="image/webp">
+          <img src="images/corap-regalo.jpg" alt="Piedino Regalo koleksiyonu — hediye kutulu zeytin yeşili desenli çorap seti" loading="lazy">
+        </picture>
       </div>
       <div class="pd-col__body">
         <p class="pd-col__kicker">Regalo</p>
