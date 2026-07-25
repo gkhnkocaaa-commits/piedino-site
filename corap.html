@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Çorap Koleksiyonu — Çok Yakında | Piedino</title>
-<meta name="description" content="Piedino bambu, pamuk ve merserize çorap koleksiyonu çok yakında.">
+<title>Çorap Koleksiyonları | Piedino</title>
+<meta name="description" content="Piedino çorap koleksiyonları: Classico, Vivo ve Regalo. Türkiye üretimi, özenle seçilmiş dokular ve renkler. Baştan ayağa Piedino.">
 <link rel="canonical" href="https://piedino.com.tr/corap.html">
 <meta name="robots" content="noindex, follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,290 +12,347 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Karla:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   *{box-sizing:border-box}
-  body{margin:0}
+  html{scroll-behavior:smooth}
+  :root{
+    --terracotta:#C24A22;
+    --navy:#1F2A44;
+    --olive:#6B6B3A;
+    --cream:#E2D4C0;
+    --card:#FBF6EF;
+    --ink:#5F5A52;
+    --muted:#9A8E7C;
+  }
+  body{
+    margin:0;background:var(--cream);color:var(--navy);
+    font-family:'Karla',system-ui,sans-serif;-webkit-font-smoothing:antialiased;
+  }
+  .pd-wrap{max-width:1120px;margin:0 auto;padding:0 24px}
 
-  .pdsoon{
-    position:relative;
-    overflow:hidden;
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:110px 24px;
+  /* ---------- HERO ---------- */
+  .pd-hero{
+    position:relative;overflow:hidden;
+    padding:100px 24px 60px;text-align:center;
     background:
-      radial-gradient(1200px 520px at 78% 12%, rgba(194,74,34,.10), transparent 62%),
-      radial-gradient(900px 460px at 12% 88%, rgba(31,42,68,.09), transparent 60%),
-      #FBF7F1;
+      radial-gradient(1100px 480px at 80% 8%, rgba(194,74,34,.12), transparent 60%),
+      radial-gradient(820px 420px at 10% 92%, rgba(107,107,58,.10), transparent 58%),
+      var(--cream);
   }
-
-  .pdsoon::before{
-    content:"";
-    position:absolute; inset:0;
-    background-image:repeating-linear-gradient(
-      45deg,
-      rgba(31,42,68,.028) 0 1px,
-      transparent 1px 11px
-    );
+  .pd-hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:repeating-linear-gradient(45deg, rgba(31,42,68,.026) 0 1px, transparent 1px 11px);
     pointer-events:none;
   }
-
-  .pdsoon__ghost{
-    position:absolute;
-    top:50%; left:50%;
-    transform:translate(-50%,-50%);
-    font-family:'Fraunces',Georgia,serif;
-    font-weight:600;
-    font-size:clamp(20rem,46vw,42rem);
-    line-height:1;
-    color:rgba(194,74,34,.045);
-    user-select:none;
-    pointer-events:none;
-    z-index:0;
+  .pd-hero__inner{position:relative;z-index:2;max-width:700px;margin:0 auto}
+  .pd-badge{
+    display:inline-flex;align-items:center;gap:9px;
+    font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--terracotta);background:rgba(194,74,34,.08);
+    border:1px solid rgba(194,74,34,.22);border-radius:100px;
+    padding:8px 18px;margin-bottom:30px;animation:pdFade .8s ease both;
+  }
+  .pd-dot{width:6px;height:6px;border-radius:50%;background:var(--terracotta);
+    animation:pdPulse 1.9s ease-in-out infinite}
+  @keyframes pdPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.7)}}
+  .pd-hero__title{
+    font-family:'Fraunces',Georgia,serif;font-weight:600;
+    font-size:clamp(2.3rem,6vw,4rem);line-height:1.12;letter-spacing:-.015em;
+    color:var(--navy);margin:0 0 22px;
+    animation:pdRise .9s cubic-bezier(.22,1,.36,1) .12s both;
+  }
+  .pd-hero__title em{font-style:italic;color:var(--terracotta)}
+  .pd-hero__text{
+    font-size:clamp(1rem,2.1vw,1.14rem);line-height:1.8;color:var(--ink);
+    max-width:540px;margin:0 auto;
+    animation:pdRise .9s cubic-bezier(.22,1,.36,1) .24s both;
   }
 
-  .pdsoon__inner{
+  /* ---------- KOLEKSİYON ŞERİTLERİ ---------- */
+  .pd-collections{padding:40px 0 60px}
+
+  .pd-col{
+    display:grid;
+    grid-template-columns:1.05fr 1fr;
+    align-items:stretch;
+    gap:0;
+    background:var(--card);
+    border:1px solid rgba(31,42,68,.08);
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:34px;
+    opacity:0;transform:translateY(26px);
+    animation:pdRise .85s cubic-bezier(.22,1,.36,1) both;
+  }
+  .pd-col:nth-of-type(2){animation-delay:.1s}
+  .pd-col:nth-of-type(3){animation-delay:.2s}
+  /* zigzag: 2. koleksiyon görseli sağda */
+  .pd-col--flip{grid-template-columns:1fr 1.05fr}
+  .pd-col--flip .pd-col__media{order:2}
+  .pd-col--flip .pd-col__body{order:1}
+
+  .pd-col__media{
     position:relative;
-    z-index:2;
-    max-width:660px;
-    text-align:center;
+    min-height:340px;
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+  }
+  .pd-col__media::after{
+    content:"";position:absolute;inset:0;
+    background-image:repeating-linear-gradient(45deg, rgba(31,42,68,.03) 0 1px, transparent 1px 12px);
+  }
+  /* koleksiyona göre zemin rengi */
+  .pd-col--classico .pd-col__media{
+    background:radial-gradient(360px 220px at 60% 30%, rgba(31,42,68,.14), transparent 62%),
+      linear-gradient(155deg,#D9C8AF 0%,#C9B492 100%);
+  }
+  .pd-col--vivo .pd-col__media{
+    background:radial-gradient(360px 220px at 60% 30%, rgba(194,74,34,.18), transparent 62%),
+      linear-gradient(155deg,#DCC6AC 0%,#CDA98A 100%);
+  }
+  .pd-col--regalo .pd-col__media{
+    background:radial-gradient(360px 220px at 60% 30%, rgba(107,107,58,.18), transparent 62%),
+      linear-gradient(155deg,#D6C7A8 0%,#BFB388 100%);
   }
 
-  .pdsoon__badge{
-    display:inline-flex;
-    align-items:center;
-    gap:9px;
-    font-family:'Karla',system-ui,sans-serif;
-    font-size:11.5px;
-    font-weight:700;
-    letter-spacing:.2em;
-    text-transform:uppercase;
-    color:#C24A22;
-    background:rgba(194,74,34,.075);
-    border:1px solid rgba(194,74,34,.22);
-    border-radius:100px;
-    padding:8px 18px;
-    margin-bottom:38px;
-    animation:pdFade .8s ease both;
-  }
-  .pdsoon__dot{
-    width:6px;height:6px;border-radius:50%;
-    background:#C24A22;
-    animation:pdPulse 1.9s ease-in-out infinite;
-  }
-  @keyframes pdPulse{
-    0%,100%{opacity:1;transform:scale(1)}
-    50%{opacity:.35;transform:scale(.7)}
+  /* çorap çizgi ikonu (yer tutucu) */
+  .pd-sock{width:82px;height:120px;position:relative;z-index:2;opacity:.55}
+  .pd-sock path{fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+  .pd-col--classico .pd-sock path{stroke:var(--navy)}
+  .pd-col--vivo .pd-sock path{stroke:var(--terracotta)}
+  .pd-col--regalo .pd-sock path{stroke:var(--olive)}
+  .pd-col__ph{
+    position:absolute;bottom:16px;left:0;right:0;z-index:2;text-align:center;
+    font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    color:rgba(31,42,68,.4);
   }
 
-  .pdsoon__knit{
-    width:132px;height:52px;
-    margin:0 auto 40px;
-    display:block;
-    animation:pdFade .8s ease .1s both;
+  .pd-col__body{padding:44px 42px;display:flex;flex-direction:column;justify-content:center}
+  .pd-col__kicker{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+    margin:0 0 14px;
   }
-  .pdsoon__knit path{
-    fill:none;
-    stroke:#C24A22;
-    stroke-width:2.6;
-    stroke-linecap:round;
-    stroke-dasharray:260;
-    stroke-dashoffset:260;
-    animation:pdDraw 3.2s ease-in-out infinite;
+  .pd-col--classico .pd-col__kicker{color:var(--navy)}
+  .pd-col--vivo .pd-col__kicker{color:var(--terracotta)}
+  .pd-col--regalo .pd-col__kicker{color:var(--olive)}
+  .pd-col__kicker::before{content:"";width:22px;height:2px;border-radius:2px;background:currentColor}
+
+  .pd-col__name{
+    font-family:'Fraunces',Georgia,serif;font-weight:600;
+    font-size:clamp(1.7rem,3.4vw,2.2rem);line-height:1.15;
+    color:var(--navy);margin:0 0 16px;
   }
-  .pdsoon__knit path:nth-child(2){
-    stroke:#1F2A44;
-    opacity:.32;
-    animation-delay:.45s;
+  .pd-col__desc{font-size:15px;line-height:1.75;color:var(--ink);margin:0 0 24px}
+
+  .pd-col__meta{display:flex;flex-wrap:wrap;gap:22px;align-items:center;margin-bottom:26px}
+  .pd-col__price{
+    font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.15rem;color:var(--navy);
   }
-  @keyframes pdDraw{
-    0%{stroke-dashoffset:260}
-    45%{stroke-dashoffset:0}
-    75%{stroke-dashoffset:0;opacity:1}
-    100%{stroke-dashoffset:-260;opacity:.15}
+  .pd-col__price small{
+    display:block;font-family:'Karla',sans-serif;font-weight:600;
+    font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+  }
+  .pd-col__feats{display:flex;flex-wrap:wrap;gap:8px}
+  .pd-feat{
+    font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+    color:#7A736A;background:rgba(31,42,68,.05);border-radius:100px;padding:6px 14px;
   }
 
-  .pdsoon__title{
-    font-family:'Fraunces',Georgia,serif;
-    font-weight:600;
-    font-size:clamp(2.3rem,6vw,4rem);
-    line-height:1.12;
-    letter-spacing:-.015em;
-    color:#1F2A44;
-    margin:0 0 26px;
-    animation:pdRise .9s cubic-bezier(.22,1,.36,1) .18s both;
+  .pd-col__link{
+    align-self:flex-start;
+    font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    text-decoration:none;color:var(--terracotta);
+    display:inline-flex;align-items:center;gap:8px;
+    transition:gap .3s ease,color .3s ease;
   }
-  .pdsoon__title em{
-    font-style:italic;
-    color:#C24A22;
-    position:relative;
-    white-space:nowrap;
-  }
-  .pdsoon__title em::after{
-    content:"";
-    position:absolute;
-    left:0; right:0; bottom:.06em;
-    height:3px;
-    background:rgba(194,74,34,.24);
-    border-radius:3px;
-    transform:scaleX(0);
-    transform-origin:left;
-    animation:pdSweep 1s cubic-bezier(.22,1,.36,1) 1s both;
-  }
-  @keyframes pdSweep{to{transform:scaleX(1)}}
+  .pd-col__link:hover{gap:14px;color:var(--navy)}
+  .pd-col__link span{transition:transform .3s ease}
 
-  .pdsoon__text{
-    font-family:'Karla',system-ui,sans-serif;
-    font-size:clamp(1rem,2.1vw,1.14rem);
-    line-height:1.8;
-    color:#5F5A52;
-    max-width:500px;
-    margin:0 auto 46px;
-    animation:pdRise .9s cubic-bezier(.22,1,.36,1) .3s both;
+  /* ---------- MARKA ŞERİDİ ---------- */
+  .pd-story{background:var(--navy);color:#F3EEE6;padding:72px 24px;text-align:center}
+  .pd-story__inner{max-width:640px;margin:0 auto}
+  .pd-story__q{
+    font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:500;
+    font-size:clamp(1.5rem,3.6vw,2.1rem);line-height:1.4;margin:0 0 20px;
   }
+  .pd-story__q span{color:#E6935F}
+  .pd-story__t{font-size:15px;line-height:1.8;color:#B9C0CE;max-width:500px;margin:0 auto}
 
-  .pdsoon__tags{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:10px;
-    margin-bottom:48px;
-    animation:pdRise .9s cubic-bezier(.22,1,.36,1) .42s both;
+  /* ---------- CTA ---------- */
+  .pd-cta{padding:80px 24px;text-align:center;background:var(--cream)}
+  .pd-cta__inner{max-width:560px;margin:0 auto}
+  .pd-cta__title{
+    font-family:'Fraunces',Georgia,serif;font-weight:600;
+    font-size:clamp(1.6rem,4vw,2.2rem);color:var(--navy);margin:0 0 16px;
   }
-  .pdsoon__tag{
-    font-family:'Karla',system-ui,sans-serif;
-    font-size:12px;
-    font-weight:600;
-    letter-spacing:.12em;
-    text-transform:uppercase;
-    color:#7A736A;
-    background:#fff;
-    border:1px solid rgba(31,42,68,.10);
-    border-radius:100px;
-    padding:9px 20px;
-    transition:color .3s ease,border-color .3s ease,transform .3s ease;
+  .pd-cta__text{font-size:15px;line-height:1.75;color:var(--ink);margin:0 0 34px}
+  .pd-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+  .pd-btn{
+    font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    text-decoration:none;padding:15px 32px;border-radius:3px;
+    transition:all .3s cubic-bezier(.22,1,.36,1);display:inline-block;
   }
-  .pdsoon__tag:hover{
-    color:#C24A22;
-    border-color:rgba(194,74,34,.4);
-    transform:translateY(-2px);
-  }
-
-  .pdsoon__actions{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:14px;
-    animation:pdRise .9s cubic-bezier(.22,1,.36,1) .54s both;
-  }
-  .pdsoon__btn{
-    font-family:'Karla',system-ui,sans-serif;
-    font-size:13px;
-    font-weight:700;
-    letter-spacing:.1em;
-    text-transform:uppercase;
-    text-decoration:none;
-    padding:15px 32px;
-    border-radius:3px;
-    transition:all .3s cubic-bezier(.22,1,.36,1);
-    display:inline-block;
-  }
-  .pdsoon__btn--solid{
-    color:#fff;
-    background:#C24A22;
-    box-shadow:0 6px 20px rgba(194,74,34,.24);
-  }
-  .pdsoon__btn--solid:hover{
-    background:#1F2A44;
-    box-shadow:0 10px 28px rgba(31,42,68,.26);
-    transform:translateY(-3px);
-  }
-  .pdsoon__btn--ghost{
-    color:#1F2A44;
-    background:transparent;
-    border:1.5px solid rgba(31,42,68,.2);
-  }
-  .pdsoon__btn--ghost:hover{
-    border-color:#1F2A44;
-    background:rgba(31,42,68,.045);
-    transform:translateY(-3px);
-  }
-
-  .pdsoon__note{
-    margin-top:54px;
-    font-family:'Fraunces',Georgia,serif;
-    font-style:italic;
-    font-size:14.5px;
-    color:#A79C8E;
-    animation:pdFade 1s ease .8s both;
-  }
+  .pd-btn--solid{color:#fff;background:var(--terracotta);box-shadow:0 6px 20px rgba(194,74,34,.24)}
+  .pd-btn--solid:hover{background:var(--navy);box-shadow:0 10px 28px rgba(31,42,68,.26);transform:translateY(-3px)}
+  .pd-btn--ghost{color:var(--navy);background:transparent;border:1.5px solid rgba(31,42,68,.2)}
+  .pd-btn--ghost:hover{border-color:var(--navy);background:rgba(31,42,68,.05);transform:translateY(-3px)}
+  .pd-note{margin-top:44px;font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:14.5px;color:var(--muted)}
 
   @keyframes pdFade{from{opacity:0}to{opacity:1}}
-  @keyframes pdRise{
-    from{opacity:0;transform:translateY(22px)}
-    to{opacity:1;transform:translateY(0)}
-  }
+  @keyframes pdRise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 
+  @media (max-width:780px){
+    .pd-col,.pd-col--flip{grid-template-columns:1fr}
+    .pd-col--flip .pd-col__media{order:0}
+    .pd-col--flip .pd-col__body{order:0}
+    .pd-col__media{min-height:240px}
+    .pd-col__body{padding:34px 28px}
+  }
   @media (max-width:600px){
-    .pdsoon{padding:76px 20px}
-    .pdsoon__title{font-size:2.1rem}
-    .pdsoon__title em{white-space:normal}
-    .pdsoon__actions{flex-direction:column;width:100%}
-    .pdsoon__btn{width:100%;text-align:center}
-    .pdsoon__note{margin-top:40px}
+    .pd-hero{padding:76px 20px 48px}
+    .pd-actions{flex-direction:column}
+    .pd-btn{width:100%;text-align:center}
   }
-
   @media (prefers-reduced-motion:reduce){
-    .pdsoon *{animation:none!important;transform:none!important}
-    .pdsoon__title em::after{transform:scaleX(1)}
-    .pdsoon__knit path{stroke-dashoffset:0}
+    *{animation:none!important;transform:none!important}
+    .pd-col{opacity:1}
   }
 </style>
 </head>
 <body>
 
-<section class="pdsoon">
-  <span class="pdsoon__ghost" aria-hidden="true">P</span>
-
-  <div class="pdsoon__inner">
-
-    <span class="pdsoon__badge">
-      <span class="pdsoon__dot"></span>
-      Piedino 2026 Koleksiyonu
-    </span>
-
-    <svg class="pdsoon__knit" viewBox="0 0 132 52" aria-hidden="true">
-      <path d="M4 34c0-14 11-24 22-24s22 10 22 24c0-14 11-24 22-24s22 10 22 24c0-14 11-24 22-24s16 6 18 14"/>
-      <path d="M4 34c0-14 11-24 22-24s22 10 22 24c0-14 11-24 22-24s22 10 22 24c0-14 11-24 22-24s16 6 18 14"/>
-    </svg>
-
-    <h1 class="pdsoon__title">
-      Çorap koleksiyonumuz<br>
-      <em>sizler için hazırlanıyor</em>
+<!-- ============ HERO ============ -->
+<header class="pd-hero">
+  <div class="pd-hero__inner">
+    <span class="pd-badge"><span class="pd-dot"></span> Piedino Çorap</span>
+    <h1 class="pd-hero__title">
+      Her adımda<br>
+      <em>renk ve doku</em>
     </h1>
-
-    <p class="pdsoon__text">
-      Her ilmeği özenle seçtik. Bambu, pamuk ve merserize ipliklerden
-      ördüğümüz çorapları en doğru şekilde sunabilmek için
-      son hazırlıklarımızı yapıyoruz.
+    <p class="pd-hero__text">
+      Üç koleksiyon, üç ayrı karakter. Sade günlükten canlı desenlere,
+      hediyelik özel setlere kadar — hepsi Türkiye üretimi, özenle örülmüş.
     </p>
+  </div>
+</header>
 
-    <div class="pdsoon__tags">
-      <span class="pdsoon__tag">Bambu</span>
-      <span class="pdsoon__tag">Pamuk</span>
-      <span class="pdsoon__tag">Merserize</span>
-      <span class="pdsoon__tag">Türkiye Üretimi</span>
+<!-- ============ KOLEKSİYONLAR ============ -->
+<section class="pd-collections">
+  <div class="pd-wrap">
+
+    <!-- CLASSICO -->
+    <article class="pd-col pd-col--classico">
+      <div class="pd-col__media">
+        <svg class="pd-sock" viewBox="0 0 82 120" aria-hidden="true">
+          <path d="M28 8h26v46c0 6 3 10 9 15l10 9c6 6 8 13 5 20-3 8-11 12-19 9l-30-13c-8-3-13-11-13-20V8z"/>
+          <path d="M28 20h26"/>
+        </svg>
+        <span class="pd-col__ph">Görsel yakında</span>
+      </div>
+      <div class="pd-col__body">
+        <p class="pd-col__kicker">Classico</p>
+        <h2 class="pd-col__name">Her güne yakışan sadelik</h2>
+        <p class="pd-col__desc">
+          Düz renkler, temiz dikişler, gün boyu konfor. Ofisten günlük
+          hayata her kombinle uyumlu, zamansız çorap serisi.
+        </p>
+        <div class="pd-col__meta">
+          <div class="pd-col__price">Çok Yakında<small>Lansmana özel</small></div>
+          <div class="pd-col__feats">
+            <span class="pd-feat">Pamuk</span>
+            <span class="pd-feat">Düz Renk</span>
+            <span class="pd-feat">Günlük</span>
+          </div>
+        </div>
+        <a class="pd-col__link" href="#">Koleksiyonu keşfet <span>&rarr;</span></a>
+      </div>
+    </article>
+
+    <!-- VIVO -->
+    <article class="pd-col pd-col--vivo pd-col--flip">
+      <div class="pd-col__media">
+        <svg class="pd-sock" viewBox="0 0 82 120" aria-hidden="true">
+          <path d="M28 8h26v46c0 6 3 10 9 15l10 9c6 6 8 13 5 20-3 8-11 12-19 9l-30-13c-8-3-13-11-13-20V8z"/>
+          <path d="M28 34h26M28 48h30M30 62h30"/>
+        </svg>
+        <span class="pd-col__ph">Görsel yakında</span>
+      </div>
+      <div class="pd-col__body">
+        <p class="pd-col__kicker">Vivo</p>
+        <h2 class="pd-col__name">Canlı desen, cesur renk</h2>
+        <p class="pd-col__desc">
+          Enerjik renk paletleri ve karakterli desenler. Kombinine
+          imza atmak, sıradanı bozmak isteyenler için tasarlandı.
+        </p>
+        <div class="pd-col__meta">
+          <div class="pd-col__price">Çok Yakında<small>Lansmana özel</small></div>
+          <div class="pd-col__feats">
+            <span class="pd-feat">Desenli</span>
+            <span class="pd-feat">Canlı Renk</span>
+            <span class="pd-feat">Karakter</span>
+          </div>
+        </div>
+        <a class="pd-col__link" href="#">Koleksiyonu keşfet <span>&rarr;</span></a>
+      </div>
+    </article>
+
+    <!-- REGALO -->
+    <article class="pd-col pd-col--regalo">
+      <div class="pd-col__media">
+        <svg class="pd-sock" viewBox="0 0 82 120" aria-hidden="true">
+          <path d="M28 8h26v46c0 6 3 10 9 15l10 9c6 6 8 13 5 20-3 8-11 12-19 9l-30-13c-8-3-13-11-13-20V8z"/>
+          <path d="M20 4h42M25 4v6M41 4v6M57 4v6"/>
+        </svg>
+        <span class="pd-col__ph">Görsel yakında</span>
+      </div>
+      <div class="pd-col__body">
+        <p class="pd-col__kicker">Regalo</p>
+        <h2 class="pd-col__name">Hediye edilmeye değer</h2>
+        <p class="pd-col__desc">
+          Özenli kutusu ve seçkin dokusuyla hediyelik setler. Sevdiklerinize
+          "baştan ayağa" bir özen sunmanın en zarif yolu.
+        </p>
+        <div class="pd-col__meta">
+          <div class="pd-col__price">Çok Yakında<small>Lansmana özel</small></div>
+          <div class="pd-col__feats">
+            <span class="pd-feat">Hediye Kutulu</span>
+            <span class="pd-feat">Set</span>
+            <span class="pd-feat">Premium</span>
+          </div>
+        </div>
+        <a class="pd-col__link" href="#">Koleksiyonu keşfet <span>&rarr;</span></a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ MARKA ŞERİDİ ============ -->
+<section class="pd-story">
+  <div class="pd-story__inner">
+    <p class="pd-story__q">
+      Ayaklarınızdan başlayan <span>özen</span>,
+      her ilmekte kendini gösterir.
+    </p>
+    <p class="pd-story__t">
+      Piedino her koleksiyonu aynı dikkatle örüyor: doğru iplik, doğru renk,
+      doğru doku. Türkiye üretimi, aileden gelen çorap ustalığıyla.
+    </p>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="pd-cta">
+  <div class="pd-cta__inner">
+    <h2 class="pd-cta__title">Yeni koleksiyonlardan ilk siz haberdar olun</h2>
+    <p class="pd-cta__text">
+      Yeni renkler ve sınırlı setler çıktığında ilk görenlerden olmak için
+      Instagram'da bizi takip edin.
+    </p>
+    <div class="pd-actions">
+      <a class="pd-btn pd-btn--solid" href="https://instagram.com/piedino.tr" target="_blank" rel="noopener">Instagram'da Takip Et</a>
+      <a class="pd-btn pd-btn--ghost" href="https://piedino.com.tr/">Ana Sayfaya Dön</a>
     </div>
-
-    <div class="pdsoon__actions">
-      <a class="pdsoon__btn pdsoon__btn--solid"
-         href="https://instagram.com/piedino.tr"
-         target="_blank" rel="noopener">Instagram'da Takip Et</a>
-      <a class="pdsoon__btn pdsoon__btn--ghost"
-         href="https://piedino.com.tr/">Ana Sayfaya Dön</a>
-    </div>
-
-    <p class="pdsoon__note">dalla testa ai piedi — baştan ayağa</p>
-
+    <p class="pd-note">dalla testa ai piedi — baştan ayağa</p>
   </div>
 </section>
 
