@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Şapka Koleksiyonu | Piedino</title>
-<meta name="description" content="Piedino keten, hasır ve safari şapka koleksiyonu. Türkiye üretimi, özenle seçilmiş dokular. Baştan ayağa Piedino.">
+<meta name="description" content="Piedino şapka koleksiyonu: Spor, Klasik, Hasır ve Bere. Türkiye üretimi, her mevsime uygun. Baştan ayağa Piedino.">
 <link rel="canonical" href="https://piedino.com.tr/sapka.html">
 <meta name="robots" content="noindex, follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,182 +13,158 @@
 <style>
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{
-    margin:0;
-    background:#FBF7F1;
-    color:#1F2A44;
-    font-family:'Karla',system-ui,sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
-
-  /* ---------- Renk & yardımcılar ---------- */
   :root{
     --terracotta:#C24A22;
     --navy:#1F2A44;
     --olive:#6B6B3A;
-    --cream:#FBF7F1;
+    --cream:#E2D4C0;
+    --card:#FBF6EF;
     --ink:#5F5A52;
-    --muted:#A79C8E;
+    --muted:#9A8E7C;
   }
-
-  .pd-wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  body{
+    margin:0;background:var(--cream);color:var(--navy);
+    font-family:'Karla',system-ui,sans-serif;-webkit-font-smoothing:antialiased;
+  }
+  .pd-wrap{max-width:1200px;margin:0 auto;padding:0 24px}
 
   /* ---------- HERO ---------- */
   .pd-hero{
-    position:relative;
-    overflow:hidden;
-    padding:96px 24px 72px;
-    text-align:center;
+    position:relative;overflow:hidden;
+    padding:100px 24px 54px;text-align:center;
     background:
-      radial-gradient(1100px 480px at 80% 8%, rgba(194,74,34,.09), transparent 60%),
-      radial-gradient(820px 420px at 10% 92%, rgba(31,42,68,.08), transparent 58%),
+      radial-gradient(1100px 480px at 80% 8%, rgba(194,74,34,.12), transparent 60%),
+      radial-gradient(820px 420px at 10% 92%, rgba(107,107,58,.10), transparent 58%),
       var(--cream);
   }
   .pd-hero::before{
-    content:"";
-    position:absolute; inset:0;
-    background-image:repeating-linear-gradient(
-      45deg, rgba(31,42,68,.026) 0 1px, transparent 1px 11px);
+    content:"";position:absolute;inset:0;
+    background-image:repeating-linear-gradient(45deg, rgba(31,42,68,.026) 0 1px, transparent 1px 11px);
     pointer-events:none;
   }
-  .pd-hero__inner{position:relative;z-index:2;max-width:680px;margin:0 auto}
-
+  .pd-hero__inner{position:relative;z-index:2;max-width:700px;margin:0 auto}
   .pd-badge{
     display:inline-flex;align-items:center;gap:9px;
-    font-size:11.5px;font-weight:700;letter-spacing:.2em;
-    text-transform:uppercase;color:var(--terracotta);
-    background:rgba(194,74,34,.075);
-    border:1px solid rgba(194,74,34,.22);
-    border-radius:100px;padding:8px 18px;margin-bottom:30px;
-    animation:pdFade .8s ease both;
+    font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--terracotta);background:rgba(194,74,34,.08);
+    border:1px solid rgba(194,74,34,.22);border-radius:100px;
+    padding:8px 18px;margin-bottom:30px;animation:pdFade .8s ease both;
   }
   .pd-dot{width:6px;height:6px;border-radius:50%;background:var(--terracotta);
     animation:pdPulse 1.9s ease-in-out infinite}
   @keyframes pdPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.7)}}
-
   .pd-hero__title{
     font-family:'Fraunces',Georgia,serif;font-weight:600;
-    font-size:clamp(2.3rem,6vw,4rem);line-height:1.12;
-    letter-spacing:-.015em;color:var(--navy);margin:0 0 22px;
+    font-size:clamp(2.3rem,6vw,4rem);line-height:1.12;letter-spacing:-.015em;
+    color:var(--navy);margin:0 0 22px;
     animation:pdRise .9s cubic-bezier(.22,1,.36,1) .12s both;
   }
   .pd-hero__title em{font-style:italic;color:var(--terracotta)}
-
   .pd-hero__text{
-    font-size:clamp(1rem,2.1vw,1.14rem);line-height:1.8;
-    color:var(--ink);max-width:520px;margin:0 auto 34px;
+    font-size:clamp(1rem,2.1vw,1.14rem);line-height:1.8;color:var(--ink);
+    max-width:540px;margin:0 auto;
     animation:pdRise .9s cubic-bezier(.22,1,.36,1) .24s both;
   }
 
-  .pd-tags{
-    display:flex;flex-wrap:wrap;justify-content:center;gap:10px;
-    animation:pdRise .9s cubic-bezier(.22,1,.36,1) .36s both;
-  }
-  .pd-tag{
-    font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
-    color:#7A736A;background:#fff;border:1px solid rgba(31,42,68,.10);
-    border-radius:100px;padding:9px 20px;transition:.3s ease;
-  }
-  .pd-tag:hover{color:var(--terracotta);border-color:rgba(194,74,34,.4);transform:translateY(-2px)}
-
-  /* ---------- KOLEKSİYON GRID ---------- */
-  .pd-section{padding:32px 0 88px}
-
-  .pd-eyebrow{
-    display:block;text-align:center;
-    font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
-    color:var(--terracotta);margin:0 0 12px;
-  }
-  .pd-heading{
-    font-family:'Fraunces',Georgia,serif;font-weight:600;
-    font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.2;
-    text-align:center;color:var(--navy);margin:0 0 56px;
-  }
-
-  .pd-grid{
+  /* ---------- DİKEY ÇUBUKLAR ---------- */
+  .pd-bars{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:24px;
+    gap:14px;
+    padding:34px 0 110px;
+    align-items:start;
   }
-
-  .pd-card{
-    background:#fff;
-    border:1px solid rgba(31,42,68,.08);
-    border-radius:6px;
-    overflow:hidden;
-    display:flex;flex-direction:column;
-    transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease;
-    opacity:0;transform:translateY(24px);
-    animation:pdRise .8s cubic-bezier(.22,1,.36,1) both;
-  }
-  .pd-card:nth-child(1){animation-delay:.05s}
-  .pd-card:nth-child(2){animation-delay:.15s}
-  .pd-card:nth-child(3){animation-delay:.25s}
-  .pd-card:nth-child(4){animation-delay:.35s}
-  .pd-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 18px 40px rgba(31,42,68,.12);
-  }
-
-  /* Yer tutucu görsel alanı */
-  .pd-card__media{
+  /* zigzag: çift paneller aşağı kayar */
+  .pd-bar:nth-child(2){margin-top:56px}
+  .pd-bar:nth-child(4){margin-top:56px}
+  .pd-bar{
     position:relative;
-    aspect-ratio:4/5;
-    background:
-      radial-gradient(420px 200px at 70% 20%, rgba(194,74,34,.10), transparent 60%),
-      linear-gradient(160deg, #F1EADF 0%, #E9E0D2 100%);
+    display:block;
+    text-decoration:none;
+    aspect-ratio:9/19;
+    border-radius:12px;
+    overflow:hidden;
+    background:var(--navy);
+    opacity:0;transform:translateY(28px);
+    animation:pdRise .8s cubic-bezier(.22,1,.36,1) both;
+    box-shadow:0 6px 20px rgba(31,42,68,.10);
+    transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s ease;
+  }
+  .pd-bar:nth-child(1){animation-delay:.05s}
+  .pd-bar:nth-child(2){animation-delay:.14s}
+  .pd-bar:nth-child(3){animation-delay:.23s}
+  .pd-bar:nth-child(4){animation-delay:.32s}
+  .pd-bar:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 46px rgba(31,42,68,.22);
+  }
+
+  /* zemin (görsel yoksa) */
+  .pd-bar__media{
+    position:absolute;inset:0;
     display:flex;align-items:center;justify-content:center;
     overflow:hidden;
   }
-  .pd-card__media::after{
-    content:"";position:absolute;inset:0;
-    background-image:repeating-linear-gradient(
-      45deg, rgba(31,42,68,.03) 0 1px, transparent 1px 12px);
+  .pd-bar__media img{
+    width:100%;height:100%;object-fit:cover;object-position:center;
+    display:block;
+    transition:transform .6s cubic-bezier(.22,1,.36,1);
   }
-  /* Şapka çizgi ikonu (yer tutucu) */
-  .pd-hat{width:96px;height:64px;position:relative;z-index:2;opacity:.5}
-  .pd-hat path{fill:none;stroke:var(--navy);stroke-width:2.4;
-    stroke-linecap:round;stroke-linejoin:round}
-  .pd-card:nth-child(1) .pd-hat path{stroke:var(--terracotta)}
-  .pd-card:nth-child(2) .pd-hat path{stroke:var(--olive)}
-  .pd-card:nth-child(3) .pd-hat path{stroke:var(--navy)}
-  .pd-card:nth-child(4) .pd-hat path{stroke:var(--terracotta)}
+  .pd-bar:hover .pd-bar__media img{transform:scale(1.06)}
+  /* model rengine göre yer tutucu zemin */
+  .pd-bar--spor   .pd-bar__media{background:linear-gradient(165deg,#CDB395 0%,#B99A6E 100%)}
+  .pd-bar--klasik .pd-bar__media{background:linear-gradient(165deg,#C9B08C 0%,#A98F63 100%)}
+  .pd-bar--hasir  .pd-bar__media{background:linear-gradient(165deg,#C3BE94 0%,#A6A46E 100%)}
+  .pd-bar--bere   .pd-bar__media{background:linear-gradient(165deg,#D0B896 0%,#BE9A73 100%)}
 
-  .pd-card__ph{
-    position:absolute;bottom:14px;left:0;right:0;z-index:2;
-    text-align:center;font-size:10.5px;font-weight:600;
-    letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  /* yer tutucu şapka ikonu */
+  .pd-hat{width:78px;height:52px;opacity:.5;position:relative;z-index:1}
+  .pd-hat path{fill:none;stroke:#FBF6EF;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+  .pd-bar__ph{
+    position:absolute;top:20px;left:0;right:0;z-index:1;text-align:center;
+    font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+    color:rgba(251,246,239,.7);
   }
 
-  .pd-card__body{padding:22px 22px 26px}
-  .pd-card__kicker{
-    font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
-    color:var(--terracotta);margin:0 0 8px;
+  /* alt bilgi bandı (her zaman görünür) */
+  .pd-bar__overlay{
+    position:absolute;left:0;right:0;bottom:0;z-index:2;
+    padding:70px 20px 22px;
+    background:linear-gradient(180deg,transparent 0%,rgba(20,26,42,.55) 45%,rgba(20,26,42,.9) 100%);
   }
-  .pd-card__name{
+  .pd-bar__kicker{
+    display:inline-block;
+    font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+    color:#F0C9A8;margin:0 0 6px;
+  }
+  .pd-bar--klasik .pd-bar__kicker{color:#B9C3D6}
+  .pd-bar--hasir  .pd-bar__kicker{color:#CBD1A0}
+  .pd-bar__name{
     font-family:'Fraunces',Georgia,serif;font-weight:600;
-    font-size:1.35rem;line-height:1.25;color:var(--navy);margin:0 0 10px;
+    font-size:1.35rem;line-height:1.15;color:#fff;margin:0 0 10px;
   }
-  .pd-card__desc{
-    font-size:14.5px;line-height:1.65;color:var(--ink);margin:0;
+  .pd-bar__soon{
+    display:inline-flex;align-items:center;gap:7px;
+    font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    color:#fff;background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:100px;padding:6px 14px;
+    backdrop-filter:blur(4px);
+  }
+  .pd-bar__soon::before{
+    content:"";width:5px;height:5px;border-radius:50%;background:#F0C9A8;
+    animation:pdPulse 1.9s ease-in-out infinite;
   }
 
-  /* ---------- ANLATIM ŞERİDİ ---------- */
-  .pd-story{
-    background:var(--navy);
-    color:#F3EEE6;
-    padding:72px 24px;
-    text-align:center;
-  }
+  /* ---------- MARKA ŞERİDİ ---------- */
+  .pd-story{background:var(--navy);color:#F3EEE6;padding:72px 24px;text-align:center}
   .pd-story__inner{max-width:640px;margin:0 auto}
   .pd-story__q{
     font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:500;
     font-size:clamp(1.5rem,3.6vw,2.1rem);line-height:1.4;margin:0 0 20px;
   }
   .pd-story__q span{color:#E6935F}
-  .pd-story__t{
-    font-size:15px;line-height:1.8;color:#B9C0CE;max-width:500px;margin:0 auto;
-  }
+  .pd-story__t{font-size:15px;line-height:1.8;color:#B9C0CE;max-width:500px;margin:0 auto}
 
   /* ---------- CTA ---------- */
   .pd-cta{padding:80px 24px;text-align:center;background:var(--cream)}
@@ -204,38 +180,34 @@
     text-decoration:none;padding:15px 32px;border-radius:3px;
     transition:all .3s cubic-bezier(.22,1,.36,1);display:inline-block;
   }
-  .pd-btn--solid{color:#fff;background:var(--terracotta);
-    box-shadow:0 6px 20px rgba(194,74,34,.24)}
-  .pd-btn--solid:hover{background:var(--navy);
-    box-shadow:0 10px 28px rgba(31,42,68,.26);transform:translateY(-3px)}
-  .pd-btn--ghost{color:var(--navy);background:transparent;
-    border:1.5px solid rgba(31,42,68,.2)}
-  .pd-btn--ghost:hover{border-color:var(--navy);
-    background:rgba(31,42,68,.045);transform:translateY(-3px)}
-
-  .pd-note{
-    margin-top:44px;font-family:'Fraunces',Georgia,serif;font-style:italic;
-    font-size:14.5px;color:var(--muted);
-  }
+  .pd-btn--solid{color:#fff;background:var(--terracotta);box-shadow:0 6px 20px rgba(194,74,34,.24)}
+  .pd-btn--solid:hover{background:var(--navy);box-shadow:0 10px 28px rgba(31,42,68,.26);transform:translateY(-3px)}
+  .pd-btn--ghost{color:var(--navy);background:transparent;border:1.5px solid rgba(31,42,68,.2)}
+  .pd-btn--ghost:hover{border-color:var(--navy);background:rgba(31,42,68,.05);transform:translateY(-3px)}
+  .pd-note{margin-top:44px;font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:14.5px;color:var(--muted)}
 
   @keyframes pdFade{from{opacity:0}to{opacity:1}}
   @keyframes pdRise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 
-  @media (max-width:920px){
-    .pd-grid{grid-template-columns:repeat(2,1fr);gap:22px}
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:900px){
+    .pd-bars{grid-template-columns:repeat(2,1fr);gap:16px;padding-bottom:70px}
+    .pd-bar{aspect-ratio:4/5}
+    .pd-bar:nth-child(2){margin-top:0}
+    .pd-bar:nth-child(4){margin-top:0}
+    .pd-bar:nth-child(2),
+    .pd-bar:nth-child(4){transform:translateY(0)}
   }
-  @media (max-width:540px){
-    .pd-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto}
-  }
-  @media (max-width:600px){
-    .pd-hero{padding:72px 20px 56px}
-    .pd-section{padding:24px 0 64px}
+  @media (max-width:520px){
+    .pd-bars{grid-template-columns:1fr;max-width:420px;margin:0 auto}
+    .pd-bar{aspect-ratio:16/12}
+    .pd-hero{padding:76px 20px 40px}
     .pd-actions{flex-direction:column}
     .pd-btn{width:100%;text-align:center}
   }
   @media (prefers-reduced-motion:reduce){
     *{animation:none!important;transform:none!important}
-    .pd-card{opacity:1}
+    .pd-bar{opacity:1}
   }
 </style>
 </head>
@@ -244,115 +216,90 @@
 <!-- ============ HERO ============ -->
 <header class="pd-hero">
   <div class="pd-hero__inner">
-    <span class="pd-badge">
-      <span class="pd-dot"></span>
-      Piedino 2026 Koleksiyonu
-    </span>
+    <span class="pd-badge"><span class="pd-dot"></span> Piedino Şapka</span>
     <h1 class="pd-hero__title">
       Dört mevsim<br>
       <em>başınıza yakışan</em>
     </h1>
     <p class="pd-hero__text">
-      Yazın keten, hasır ve safari; kışın sıcacık bere. Her dokuyu
+      Spordan klasiğe, yazlık hasırdan kışlık bereye — her modeli
       özenle seçtik. Türkiye üretimi, her mevsime uygun.
     </p>
-    <div class="pd-tags">
-      <span class="pd-tag">Keten</span>
-      <span class="pd-tag">Hasır</span>
-      <span class="pd-tag">Safari</span>
-      <span class="pd-tag">Bere</span>
-      <span class="pd-tag">Türkiye Üretimi</span>
-    </div>
   </div>
 </header>
 
-<!-- ============ KOLEKSİYON GRID ============ -->
-<section class="pd-section">
-  <div class="pd-wrap">
-    <span class="pd-eyebrow">Modeller</span>
-    <h2 class="pd-heading">Dört doku, dört karakter</h2>
+<!-- ============ DİKEY ÇUBUKLAR ============ -->
+<section class="pd-wrap">
+  <div class="pd-bars">
 
-    <div class="pd-grid">
+    <!-- SPOR -->
+    <a class="pd-bar pd-bar--spor" href="#">
+      <div class="pd-bar__media">
+        <span class="pd-bar__ph">Görsel yakında</span>
+        <svg class="pd-hat" viewBox="0 0 96 64" aria-hidden="true">
+          <path d="M14 46c0-16 10-26 34-26s34 10 34 26"/>
+          <path d="M4 46c8-5 26-8 44-8s36 3 44 8"/>
+          <path d="M60 24l14-6"/>
+        </svg>
+      </div>
+      <div class="pd-bar__overlay">
+        <span class="pd-bar__kicker">Spor</span>
+        <h2 class="pd-bar__name">Aktif ve rahat</h2>
+        <span class="pd-bar__soon">Çok Yakında</span>
+      </div>
+    </a>
 
-      <!-- Kart 1: Keten -->
-      <article class="pd-card">
-        <div class="pd-card__media">
-          <svg class="pd-hat" viewBox="0 0 96 64" aria-hidden="true">
-            <path d="M14 46c0-16 10-26 34-26s34 10 34 26"/>
-            <path d="M4 46c8-5 26-8 44-8s36 3 44 8"/>
-          </svg>
-          <span class="pd-card__ph">Görsel yakında</span>
-        </div>
-        <div class="pd-card__body">
-          <p class="pd-card__kicker">Keten</p>
-          <h3 class="pd-card__name">Nefes alan hafiflik</h3>
-          <p class="pd-card__desc">
-            Sıcak günler için yumuşak dokulu keten. Hafif, esnek ve
-            gün boyu konforlu bir kullanım.
-          </p>
-        </div>
-      </article>
+    <!-- KLASİK -->
+    <a class="pd-bar pd-bar--klasik" href="#">
+      <div class="pd-bar__media">
+        <span class="pd-bar__ph">Görsel yakında</span>
+        <svg class="pd-hat" viewBox="0 0 96 64" aria-hidden="true">
+          <path d="M18 44c0-15 9-24 30-24s30 9 30 24"/>
+          <path d="M2 44c9-6 28-9 46-9s37 3 46 9"/>
+          <path d="M18 40h60"/>
+        </svg>
+      </div>
+      <div class="pd-bar__overlay">
+        <span class="pd-bar__kicker">Klasik</span>
+        <h2 class="pd-bar__name">Zamansız duruş</h2>
+        <span class="pd-bar__soon">Çok Yakında</span>
+      </div>
+    </a>
 
-      <!-- Kart 2: Hasır -->
-      <article class="pd-card">
-        <div class="pd-card__media">
-          <svg class="pd-hat" viewBox="0 0 96 64" aria-hidden="true">
-            <path d="M16 44c0-15 9-24 32-24s32 9 32 24"/>
-            <path d="M2 44c9-6 28-9 46-9s37 3 46 9"/>
-          </svg>
-          <span class="pd-card__ph">Görsel yakında</span>
-        </div>
-        <div class="pd-card__body">
-          <p class="pd-card__kicker">Hasır</p>
-          <h3 class="pd-card__name">Sahil ve şehir arası</h3>
-          <p class="pd-card__desc">
-            Klasik dokuma hasır. Tatilde de şehirde de güneşi
-            estetik bir gölgeyle karşılar.
-          </p>
-        </div>
-      </article>
+    <!-- HASIR -->
+    <a class="pd-bar pd-bar--hasir" href="#">
+      <div class="pd-bar__media">
+        <span class="pd-bar__ph">Görsel yakında</span>
+        <svg class="pd-hat" viewBox="0 0 96 64" aria-hidden="true">
+          <path d="M16 44c0-15 9-24 32-24s32 9 32 24"/>
+          <path d="M2 44c9-6 28-9 46-9s37 3 46 9"/>
+          <path d="M24 34h48M28 40h40"/>
+        </svg>
+      </div>
+      <div class="pd-bar__overlay">
+        <span class="pd-bar__kicker">Hasır</span>
+        <h2 class="pd-bar__name">Yazlık serinlik</h2>
+        <span class="pd-bar__soon">Çok Yakında</span>
+      </div>
+    </a>
 
-      <!-- Kart 3: Safari -->
-      <article class="pd-card">
-        <div class="pd-card__media">
-          <svg class="pd-hat" viewBox="0 0 96 64" aria-hidden="true">
-            <path d="M18 42c0-14 8-22 30-22s30 8 30 22"/>
-            <path d="M2 46c10-7 28-10 46-10s36 3 46 10"/>
-            <path d="M30 20c0-6 5-10 18-10s18 4 18 10"/>
-          </svg>
-          <span class="pd-card__ph">Görsel yakında</span>
-        </div>
-        <div class="pd-card__body">
-          <p class="pd-card__kicker">Safari</p>
-          <h3 class="pd-card__name">Geniş siperli koruma</h3>
-          <p class="pd-card__desc">
-            Geniş kenarıyla güneşten korur. Outdoor ve gezginler
-            için dayanıklı bir seçim.
-          </p>
-        </div>
-      </article>
+    <!-- BERE -->
+    <a class="pd-bar pd-bar--bere" href="#">
+      <div class="pd-bar__media">
+        <span class="pd-bar__ph">Görsel yakında</span>
+        <svg class="pd-hat" viewBox="0 0 96 64" aria-hidden="true">
+          <path d="M20 44c0-16 6-26 28-26s28 10 28 26"/>
+          <path d="M14 44c0-3 15-5 34-5s34 2 34 5c0 4-15 6-34 6s-34-2-34-6z"/>
+          <path d="M48 18c0-4 3-6 3-6"/>
+        </svg>
+      </div>
+      <div class="pd-bar__overlay">
+        <span class="pd-bar__kicker">Bere</span>
+        <h2 class="pd-bar__name">Kışlık sıcaklık</h2>
+        <span class="pd-bar__soon">Çok Yakında</span>
+      </div>
+    </a>
 
-      <!-- Kart 4: Bere -->
-      <article class="pd-card">
-        <div class="pd-card__media">
-          <svg class="pd-hat" viewBox="0 0 96 64" aria-hidden="true">
-            <path d="M20 44c0-16 6-26 28-26s28 10 28 26"/>
-            <path d="M14 44c0-3 15-5 34-5s34 2 34 5c0 4-15 6-34 6s-34-2-34-6z"/>
-            <path d="M48 18c0-4 4-7 4-7"/>
-          </svg>
-          <span class="pd-card__ph">Görsel yakında</span>
-        </div>
-        <div class="pd-card__body">
-          <p class="pd-card__kicker">Bere</p>
-          <h3 class="pd-card__name">Kışın sıcak dokunuş</h3>
-          <p class="pd-card__desc">
-            Yumuşak örgü bere. Soğuk günlerde başınızı sıcak tutar,
-            her kombinle uyumludur.
-          </p>
-        </div>
-      </article>
-
-    </div>
   </div>
 </section>
 
@@ -360,11 +307,11 @@
 <section class="pd-story">
   <div class="pd-story__inner">
     <p class="pd-story__q">
-      Her ilmek, ayaklardan başladığımız <span>özenin</span>
-      artık başınıza uzanması.
+      Ayaklardan başlayan <span>özen</span>,
+      artık başınıza uzanıyor.
     </p>
     <p class="pd-story__t">
-      Piedino çorapta kurduğu doku ve renk anlayışını şimdi şapkaya taşıyor.
+      Piedino çorapta kurduğu doku ve renk anlayışını şapkaya taşıyor.
       Aynı el işçiliği, aynı Türkiye üretimi, aynı dikkat.
     </p>
   </div>
@@ -379,11 +326,8 @@
       Instagram'da bizi takip edin.
     </p>
     <div class="pd-actions">
-      <a class="pd-btn pd-btn--solid"
-         href="https://instagram.com/piedino.tr"
-         target="_blank" rel="noopener">Instagram'da Takip Et</a>
-      <a class="pd-btn pd-btn--ghost"
-         href="https://piedino.com.tr/">Ana Sayfaya Dön</a>
+      <a class="pd-btn pd-btn--solid" href="https://instagram.com/piedino.tr" target="_blank" rel="noopener">Instagram'da Takip Et</a>
+      <a class="pd-btn pd-btn--ghost" href="https://piedino.com.tr/">Ana Sayfaya Dön</a>
     </div>
     <p class="pd-note">dalla testa ai piedi — baştan ayağa</p>
   </div>
