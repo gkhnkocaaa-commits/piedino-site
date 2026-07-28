@@ -280,6 +280,15 @@
       transition:transform .7s ease;
     }
     .category-card:hover img{transform:scale(1.035)}
+    /* metin okunurluğu için sol-alttan koyu degrade */
+    .category-card.has-copy::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:1;
+      background:linear-gradient(180deg,rgba(30,26,20,.05) 0%,rgba(30,26,20,.15) 45%,rgba(30,26,20,.62) 100%);
+      pointer-events:none;
+    }
     .category-copy{
       position:absolute;
       inset:auto 0 0 0;
@@ -556,8 +565,13 @@
         <img src="assets/images/banner-corap.jpg" alt="Piedino bambu ve pamuklu çorap koleksiyonu" width="800" height="600">
       </a>
 
-      <a class="category-card" id="sapka" href="sapka.html" aria-label="Şapka koleksiyonunu keşfet">
-        <img src="assets/images/banner-sapka.jpg" alt="Piedino keten, hasır ve safari şapka koleksiyonu" width="800" height="600">
+      <a class="category-card has-copy" id="sapka" href="sapka.html" aria-label="Şapka koleksiyonunu keşfet">
+        <img src="assets/images/banner-sapka.jpg" alt="Piedino spor, klasik, hasır ve bere şapka koleksiyonu" width="800" height="600">
+        <div class="category-copy">
+          <h2>Şapka</h2>
+          <p>Tarzını tamamlayan<br>en önemli detay.</p>
+          <span class="text-link">Koleksiyonu keşfet →</span>
+        </div>
       </a>
     </section>
 
