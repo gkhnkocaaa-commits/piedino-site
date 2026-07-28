@@ -110,6 +110,7 @@
     display:block;
     transition:transform .6s cubic-bezier(.22,1,.36,1);
   }
+  .pd-bar__media--photo{background:none !important}
   .pd-bar:hover .pd-bar__media img{transform:scale(1.06)}
   /* model rengine göre yer tutucu zemin */
   .pd-bar--spor   .pd-bar__media{background:linear-gradient(165deg,#CDB395 0%,#B99A6E 100%)}
@@ -234,13 +235,11 @@
 
     <!-- SPOR -->
     <a class="pd-bar pd-bar--spor" href="#">
-      <div class="pd-bar__media">
-        <span class="pd-bar__ph">Görsel yakında</span>
-        <svg class="pd-hat" viewBox="0 0 96 64" aria-hidden="true">
-          <path d="M14 46c0-16 10-26 34-26s34 10 34 26"/>
-          <path d="M4 46c8-5 26-8 44-8s36 3 44 8"/>
-          <path d="M60 24l14-6"/>
-        </svg>
+      <div class="pd-bar__media pd-bar__media--photo">
+        <picture>
+          <source srcset="assets/images/sapka-spor.webp" type="image/webp">
+          <img src="assets/images/sapka-spor.jpg" alt="Piedino Spor şapka — terracotta trucker cap" loading="lazy">
+        </picture>
       </div>
       <div class="pd-bar__overlay">
         <span class="pd-bar__kicker">Spor</span>
@@ -251,13 +250,11 @@
 
     <!-- KLASİK -->
     <a class="pd-bar pd-bar--klasik" href="#">
-      <div class="pd-bar__media">
-        <span class="pd-bar__ph">Görsel yakında</span>
-        <svg class="pd-hat" viewBox="0 0 96 64" aria-hidden="true">
-          <path d="M18 44c0-15 9-24 30-24s30 9 30 24"/>
-          <path d="M2 44c9-6 28-9 46-9s37 3 46 9"/>
-          <path d="M18 40h60"/>
-        </svg>
+      <div class="pd-bar__media pd-bar__media--photo">
+        <picture>
+          <source srcset="assets/images/sapka-klasik.webp" type="image/webp">
+          <img src="assets/images/sapka-klasik.jpg" alt="Piedino Klasik şapka — lacivert ekose kasket" loading="lazy">
+        </picture>
       </div>
       <div class="pd-bar__overlay">
         <span class="pd-bar__kicker">Klasik</span>
